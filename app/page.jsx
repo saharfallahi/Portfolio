@@ -233,10 +233,10 @@ export default function HomePage() {
                   {t("hero.hello")}{" "}
                 </span>
               </div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-5 bg-gradient-to-r from-[var(--primary)] to-[var(--primary-2)] text-transparent bg-clip-text">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-5 bg-gradient-to-r from-[var(--primary)] to-[var(--primary-2)] text-transparent bg-clip-text ">
                 {t("hero.am")}
               </h1>
-              <h2 className="text-balance text-3xl sm:text-4xl font-semibold leading-snug mb-2">
+              <h2 className="text-balance text-3xl sm:text-4xl font-semibold leading-snug mb-6">
                 {t("hero.developer")}
               </h2>{" "}
               <p
@@ -334,7 +334,7 @@ export default function HomePage() {
             ].map((s) => (
               <li
                 key={s}
-                className="px-3 py-2 rounded-full bg-[color-mix(in_oklab,var(--text),transparent_92%)]"
+                className=" rounded-full bg-[color-mix(in_oklab,var(--text),transparent_92%)] focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2  px-4 py-2 text-sm font-medium  hover:bg-[var(--primary-2)] hover:text-[var(--surface)] transition-all duration-300 ease-in-out "
               >
                 {s}
               </li>

@@ -16,7 +16,7 @@ const TRANSLATIONS = {
       developer: "برنامه‌نویس وب",
       am: "سحر فلاحی",
       description:
-        "عاشق ساخت رابط‌های کاربری سریع، تمیز و در دسترس با تمرکز روی تجربه کاربری.",
+        " متخصص در فرانت‌اند و سابقه قوی در حوزه نرم افزار وعلاقه‌مند به خلق رابط‌های کاربری مدرن و تجربه‌های دیجیتال کاربرپسند.",
       ctaProjects: "مشاهده نمونه‌کارها",
       ctaContact: "ارتباط با من",
     },
@@ -88,7 +88,7 @@ const TRANSLATIONS = {
       developer: "Web Developer",
       am: "Sahar Fallahi",
       description:
-        "I love building fast, clean, and accessible UIs focused on great UX.",
+        "A front-end expert with a strong background in software development and a passion for creating modern user interfaces and user-friendly digital experiences",
       ctaProjects: "View projects",
       ctaContact: "Contact me",
     },
