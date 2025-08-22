@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0f1221;
+  --surface: #141938;
+  --text: #e8eaf6;
+  --muted: #b5bdd6;
+  --primary: #6c63ff;
+  --primary-2: #00d4ff;
+  --ring: rgba(108, 99, 255, 0.35);
+  --shadow: rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="light"] {
+  --bg: #f7f8fc;
+  --surface: #ffffff;
+  --text: #0e1330;
+  --muted: #4b5573;
+  --primary: #5b56ee;
+  --primary-2: #00b7ff;
+  --ring: rgba(91, 86, 238, 0.25);
+  --shadow: rgba(16, 22, 40, 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+  a {
+    @apply focus:outline-none focus-visible:ring-4 rounded-md;
+    box-shadow: none;
+  }
+}
+
+@layer components {
+  .container-std {
+    @apply w-full max-w-[1100px] mx-auto px-4;
+  }
+  .btn {
+    @apply inline-flex items-center gap-2 border border-transparent rounded-xl shadow-soft text-[var(--text)] no-underline transition px-4 py-3;
+  }
+  .btn-primary {
+    background: linear-gradient(90deg, var(--primary), var(--primary-2));
+    color: white;
+  }
+  .btn-ghost {
+    @apply bg-transparent border;
+    border-color: color-mix(in oklab, var(--text), transparent 75%);
+  }
+  .section {
+    @apply py-24 relative;
+  }
+  .section-alt {
+    background: linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--text), transparent 96%),
+      transparent
+    );
+  }
+  .card {
+    @apply bg-[var(--surface)] rounded-2xl overflow-hidden border;
+    border-color: color-mix(in oklab, var(--text), transparent 85%);
+  }
+  .section-title {
+    @apply text-center text-4xl mb-20 font-bold bg-gradient-to-r from-[var(--primary)] to-[var(--primary-2)] text-transparent bg-clip-text;
+  }
+}
+
+.parallax {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.layer {
+  position: absolute;
+  inset: auto;
+  width: 64vmin;
+  height: 64vmin;
+  border-radius: 50%;
+  filter: blur(12px);
+  opacity: 0.35;
+}
+.layer--1 {
+  top: -10vmin;
+  inset-inline-end: -10vmin;
+  background: radial-gradient(closest-side, var(--primary), transparent 70%);
+  mix-blend-mode: screen;
+}
+.layer--2 {
+  bottom: -20vmin;
+  inset-inline-start: -15vmin;
+  background: radial-gradient(closest-side, var(--primary-2), transparent 70%);
+  mix-blend-mode: screen;
+}
+.layer--3 {
+  top: 30%;
+  inset-inline-start: 35%;
+  background: radial-gradient(
+    closest-side,
+    color-mix(in oklab, var(--primary) 50%, var(--primary-2)),
+    transparent 70%
+  );
+  mix-blend-mode: screen;
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
