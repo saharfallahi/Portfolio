@@ -1,6 +1,17 @@
-import React from "react";
+"use client";
+
+import Image from "next/image";
+import useI18n from "../hooks/useI18n";
+import useReveal from "../hooks/useReveal";
+import useParallax from "../hooks/useParallax";
+import { useRef } from "react";
 
 function Home() {
+  const { t, lang } = useI18n();
+  const heroRef = useRef(null);
+  useReveal();
+  useParallax(heroRef);
+
   return (
     <section
       id="home"

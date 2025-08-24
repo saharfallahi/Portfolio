@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Vazirmatn } from "next/font/google";
+import { I18nProvider } from "./hooks/useI18n";
 
 const vazirmatn = Vazirmatn({
   subsets: ["arabic", "latin"],
@@ -7,9 +8,8 @@ const vazirmatn = Vazirmatn({
 });
 
 export const metadata = {
-  title: "پورتفولیو برنامه‌نویس",
-  description:
-    "پورتفولیو شخصی یک برنامه‌نویس با افکت پارالکس و رابط کاربری مدرن.",
+  title: "Sahar Fallahi | Portfolio",
+  description: "Frontend Developer Portfolio",
 };
 
 export default function RootLayout({ children }) {
@@ -18,7 +18,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${vazirmatn.className} bg-[var(--bg)] text-[var(--text)]`}
       >
-        {children}
+        <I18nProvider>
+          {children}
+        </I18nProvider>
       </body>
     </html>
   );

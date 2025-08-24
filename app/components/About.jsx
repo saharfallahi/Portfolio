@@ -1,6 +1,12 @@
-import React from "react";
+"use client";
+
+import useI18n from "../hooks/useI18n";
+import useReveal from "../hooks/useReveal";
 
 function About() {
+  const { t } = useI18n();
+  useReveal();
+
   return (
     <section id="about" className="section section-alt">
       <div className="container-std grid sm:grid-cols-1 md:grid-cols-[1.2fr_0.8fr] gap-8 items-center">

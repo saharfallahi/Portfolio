@@ -1,6 +1,12 @@
-import React from 'react'
+"use client";
+
+import useI18n from '../hooks/useI18n';
+import useReveal from '../hooks/useReveal';
 
 function Projects() {
+  const { t } = useI18n();
+  useReveal();
+
   return (
     <section
     id="projects"

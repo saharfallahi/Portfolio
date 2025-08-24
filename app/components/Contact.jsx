@@ -1,6 +1,27 @@
-import React from "react";
+"use client";
+
+import useI18n from "../hooks/useI18n";
+import useReveal from "../hooks/useReveal";
 
 function Contact() {
+  const { t } = useI18n();
+  useReveal();
+
+  const submitContact = (e) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const name = form.querySelector("#name")?.value || "";
+    const email = form.querySelector("#email")?.value || "";
+    const message = form.querySelector("#message")?.value || "";
+    const subject = encodeURIComponent(
+      `${t("contact.emailSubjectPrefix")} ${name}`
+    );
+    const body = encodeURIComponent(
+      `${message}\n\n${t("contact.emailSender")}: ${name} <${email}>`
+    );
+    window.location.href = `mailto:you@example.com?subject=${subject}&body=${body}`;
+  };
+  
   return (
     <section id="contact" className="section section-alt">
       <div className="container-std grid md:grid-cols-2 gap-8 items-start">

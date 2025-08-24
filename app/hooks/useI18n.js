@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 
 const TRANSLATIONS = {
   fa: {
     nav: {
+      logo: "سحر فلاحی",
       home: "خانه",
       about: "درباره‌من",
       skills: "مهارت‌ها",
@@ -72,11 +73,12 @@ const TRANSLATIONS = {
       emailSender: "ارسال کننده",
     },
     footer: {
-      note: "ساخته‌شده با عشق و کدنویسی.",
+      note: " سحر فلاحی. همه حقوق محفوظ است.",
     },
   },
   en: {
     nav: {
+      logo: "Sahar Fallahi",
       home: "Home",
       about: "About",
       skills: "Skills",
@@ -152,14 +154,57 @@ const TRANSLATIONS = {
       emailSender: "Sender",
     },
     footer: {
-      note: "Built with love and code.",
+      note: " Sahar Fallahi. All rights reserved.",
     },
   },
 };
 
-export default function useI18n() {
-  const [lang, setLang] = useState("fa");
+// export default function useI18n() {
+//   const [lang, setLang] = useState("en");
 
+//   useEffect(() => {
+//     try {
+//       const saved = localStorage.getItem("lang");
+//       if (saved === "fa" || saved === "en") setLang(saved);
+//     } catch {}
+//   }, []);
+
+//   useEffect(() => {
+//     if (typeof document !== "undefined") {
+//       document.documentElement.lang = lang === "fa" ? "fa" : "en";
+//       document.documentElement.dir = lang === "fa" ? "rtl" : "ltr";
+//     }
+//     try {
+//       localStorage.setItem("lang", lang);
+//     } catch {}
+//   }, [lang]);
+
+//   const t = useMemo(() => {
+//     const dict = TRANSLATIONS[lang] || {};
+//     return (key) => {
+//       const parts = key.split(".");
+//       let cur = dict;
+//       for (const p of parts) {
+//         if (cur && typeof cur === "object") cur = cur[p];
+//       }
+//       return cur ?? key;
+//     };
+//   }, [lang]);
+
+//   const toggleLanguage = () => setLang((prev) => (prev === "fa" ? "en" : "fa"));
+//   const dir = lang === "fa" ? "rtl" : "ltr";
+
+//   return { lang, dir, t, setLang, toggleLanguage };
+// }
+
+
+
+const I18nContext = createContext(null);
+
+export function I18nProvider({ children }) {
+  const [lang, setLang] = useState("en");
+
+  // hydrate from localStorage
   useEffect(() => {
     try {
       const saved = localStorage.getItem("lang");
@@ -167,6 +212,7 @@ export default function useI18n() {
     } catch {}
   }, []);
 
+  // reflect on <html> and persist
   useEffect(() => {
     if (typeof document !== "undefined") {
       document.documentElement.lang = lang === "fa" ? "fa" : "en";
@@ -177,20 +223,37 @@ export default function useI18n() {
     } catch {}
   }, [lang]);
 
-  const t = useMemo(() => {
-    const dict = TRANSLATIONS[lang] || {};
-    return (key) => {
-      const parts = key.split(".");
-      let cur = dict;
-      for (const p of parts) {
-        if (cur && typeof cur === "object") cur = cur[p];
-      }
-      return cur ?? key;
-    };
-  }, [lang]);
+  const dict = TRANSLATIONS[lang] || {};
 
-  const toggleLanguage = () => setLang((prev) => (prev === "fa" ? "en" : "fa"));
-  const dir = lang === "fa" ? "rtl" : "ltr";
+  const t = useCallback((key) => {
+    const parts = key.split(".");
+    let cur = dict;
+    for (const p of parts) {
+      if (cur && typeof cur === "object") cur = cur[p];
+      else return key;
+    }
+    return cur ?? key;
+  }, [dict]);
 
-  return { lang, dir, t, setLang, toggleLanguage };
+  const toggleLanguage = useCallback(() => {
+    setLang((prev) => (prev === "fa" ? "en" : "fa"));
+  }, []);
+
+  const value = useMemo(() => ({
+    lang,
+    dir: lang === "fa" ? "rtl" : "ltr",
+    t,
+    setLang,
+    toggleLanguage,
+  }), [lang, t, toggleLanguage]);
+
+  return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
+}
+
+export default function useI18n() {
+  const ctx = useContext(I18nContext);
+  if (!ctx) {
+    throw new Error("useI18n must be used within <I18nProvider>");
+  }
+  return ctx;
 }
