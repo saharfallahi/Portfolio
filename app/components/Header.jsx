@@ -14,7 +14,7 @@ function Header() {
           href="#home"
           className="font-bold text-xl text-[var(--text)] no-underline"
         >
-          Dev.<span className="text-[var(--primary)]">Portfolio</span>
+          <span className="text-[var(--primary)]">{t("nav.logo")}</span>
         </a>
         <nav className="hidden sm:flex">
           <ul className="flex gap-4 m-0 p-0 list-none">

@@ -32,27 +32,22 @@ function Home() {
             data-reveal
           >
             <div
-              className="relative w-36 h-36 sm:w-44 sm:h-44 md:w-56 md:h-56 rounded-full p-[3px]"
-              style={{
-                background:
-                  "conic-gradient(from 180deg at 50% 50%, var(--primary), var(--primary-2))",
-              }}
+              className="relative w-52 h-52 sm:w-60 sm:h-60 md:w-96 md:h-96 rounded-full "
+              // style={{
+              //   background:
+              //     "conic-gradient(from 180deg at 50% 50%, var(--primary), var(--primary-2)) ",
+              // }}
             >
-              <div
-                className="absolute -inset-2 rounded-full blur-xl opacity-30"
-                style={{
-                  background:
-                    "radial-gradient(closest-side, var(--primary), transparent)",
-                }}
-                aria-hidden="true"
-              />
+             
               <Image
-                src="/myphoto.png"
-                alt={lang === "fa" ? "عکس پروفایل" : "Profile photo"}
+                src="/saharfallahi.png"
+                alt={lang === "fa" ? "سحر فلاحی" : "sahar fallahi"}
                 fill
                 className="rounded-full object-cover"
                 sizes="(max-width: 640px) 9rem, (max-width: 768px) 11rem, 14rem"
+                quality={100}
                 priority
+                unoptimized
               />
             </div>
           </div>
