@@ -2,6 +2,7 @@
 
 import useI18n from "../hooks/useI18n";
 import useTheme from "../hooks/useTheme";
+import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
 
 function Header() {
   const { t, toggleLanguage, lang } = useI18n();
@@ -14,9 +15,9 @@ function Header() {
           href="#home"
           className="font-bold text-xl text-[var(--text)] no-underline"
         >
-          <span className="text-[var(--primary)]">{t("nav.logo")}</span>
+          <span className="text-[var(--primary)] ">{t("nav.logo")}</span>
         </a>
-        <nav className="hidden sm:flex">
+        <nav className="hidden md:flex">
           <ul className="flex gap-4 m-0 p-0 list-none">
             {[
               [t("nav.home"), "#home"],
@@ -39,7 +40,7 @@ function Header() {
         <div className="flex items-center gap-2">
           <button
             id="themeToggle"
-            className="border rounded-lg px-2.5 py-1 text-[var(--text)] border-[color-mix(in_oklab,var(--text),transparent_85%)]"
+            className=" rounded-lg px-2.5 py-1 text-[var(--text)] border-[color-mix(in_oklab,var(--text),transparent_85%)]"
             onClick={() => {
               const next = isLightTheme ? "dark" : "light";
               document.documentElement.setAttribute("data-theme", next);
@@ -49,15 +50,28 @@ function Header() {
               toggleTheme(next === "light");
             }}
           >
-            {isLightTheme ? "🌙" : "☀️"}
+            {isLightTheme ? (
+              <IoMoonOutline className="w-4 h-4 md:w-5 md:h-5" />
+            ) : (
+              <IoSunnyOutline className="w-4 h-4 md:w-5 md:h-5" />
+            )}
           </button>
           <button
             id="langToggle"
-            className="border rounded-lg px-2.5 py-1 text-[var(--text)] border-[color-mix(in_oklab,var(--text),transparent_85%)]"
+            className=" rounded-lg px-2.5 py-1 text-[var(--text)] border-[color-mix(in_oklab,var(--text),transparent_85%)]"
             onClick={toggleLanguage}
             aria-label="toggle language"
           >
             {lang === "fa" ? "EN" : "فارسی"}
+          </button>
+          <button>
+            <a
+              href={lang === "fa" ? "/saharfallahi-cv-fa.pdf" : "/saharfallahi-cv-en.pdf" }
+              download
+              className="btn btn-primary py-2"
+            >
+              {lang === "fa" ? "رزومه" : "Resume"}
+            </a>
           </button>
         </div>
       </div>

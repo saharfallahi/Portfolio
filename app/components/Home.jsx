@@ -24,11 +24,9 @@ function Home() {
         <span className="layer layer--3" data-speed="0.45"></span>
       </div>
       <div className="container-std">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          <div
-            className={`flex justify-center ${
-              lang === "fa" ? "md:order-1" : "md:order-2"
-            }`}
+        <div className={`flex flex-col md:flex-row-reverse items-center justify-between gap-8`}>
+        <div
+            className={`flex justify-center `}
             data-reveal
           >
             <div
@@ -54,8 +52,8 @@ function Home() {
           <div
             className={`text-center ${
               lang === "fa"
-                ? "md:text-right md:order-2"
-                : "md:text-left md:order-1"
+                ? "md:text-right"
+                : "md:text-left "
             }`}
             data-reveal
           >
@@ -71,16 +69,14 @@ function Home() {
               {t("hero.developer")}
             </h2>{" "}
             <p
-              className="text-[var(--muted)] mb-4"
+              className="text-[var(--muted)] mb-8"
               data-reveal
               data-reveal-delay="80"
             >
               {t("hero.description")}
             </p>
             <div
-              className={`flex flex-wrap justify-center ${
-                lang === "fa" ? "md:justify-end" : "md:justify-start"
-              } gap-3`}
+              className="flex flex-wrap justify-center md:justify-start gap-3"
               data-reveal
               data-reveal-delay="140"
             >
@@ -92,6 +88,7 @@ function Home() {
               </a>
             </div>
           </div>
+         
         </div>
       </div>
     </section>

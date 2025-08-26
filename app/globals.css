@@ -8,6 +8,7 @@
   --text: #e8eaf6;
   --muted: #b5bdd6;
   --primary: #6c63ff;
+  --primary-1: #7972fe;
   --primary-2: #00d4ff;
   --ring: rgba(108, 99, 255, 0.35);
   --shadow: rgba(0, 0, 0, 0.25);
@@ -46,8 +47,11 @@ html {
     @apply inline-flex items-center gap-2 border border-transparent rounded-xl shadow-soft text-[var(--text)] no-underline transition px-4 py-3;
   }
   .btn-primary {
-    background: linear-gradient(90deg, var(--primary), var(--primary-2));
+    background: var(--primary);
     color: white;
+  }
+  .btn-primary:hover{
+    background: var(--primary-1);
   }
   .btn-ghost {
     @apply bg-transparent border;
