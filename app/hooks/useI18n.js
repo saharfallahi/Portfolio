@@ -1,6 +1,13 @@
 "use client";
 
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 
 const TRANSLATIONS = {
   fa: {
@@ -32,7 +39,7 @@ const TRANSLATIONS = {
       badges: ["عملکرد بالا", "دسترسی‌پذیری", "کدنویسی تمیز", "طراحی پاسخ‌گرا"],
       stats: [
         ["4+", "سال تجربه"],
-        ["25+", "پروژه تکمیل‌شده"],
+        ["10+", "پروژه تکمیل‌شده"],
         ["10+", "مشارکت متن‌باز"],
       ],
     },
@@ -43,17 +50,32 @@ const TRANSLATIONS = {
       title: "نمونه‌کارها",
       items: [
         [
-          "پنل مدیریت سبک",
-          "داشبورد رسپانسیو با نمودارها، جدول‌ها و تم تاریک/روشن.",
+          "پروژه پتروشیمی ایران زمین",
+          "اپلیکیشن صنعتی برای معرفی خدمات حوزه پتروشیمی با طراحی رسپانسیو و تصاویر بهینه شده و سریع",
+          "https://github.com/saharfallahi/PetrochemicalApp",
+          "https://petrochemical-app.vercel.app/",
+          "/PetrochemicalApp.png",
+          ["React","TailwindCss","JSONServer"]
         ],
         [
-          "لندینگ مارکتینگ",
-          "صفحه فرود سریع با امتیاز Lighthouse بالا و SEO مناسب.",
+          "اپلیکیشن فریلنسری",
+          "یک اپلیکیشن فریلنسری با طراحی واکنش‌گرا دارای سه نقش مدیر، فریلنسر و مالک است. استفاده از شماره موبایل و کد OTP برای ورود به سیستم.",
+          "https://github.com/saharfallahi/FreelancerApp",
+          "https://freelanceproject.ir",
+          "/FreelancingApp.png",
+          ["React","TailwindCss","MongoDB","Postman",]
         ],
-        ["اپلیکیشن وظایف", "To-Do با Drag & Drop، فیلتر و ذخیره‌سازی محلی."],
+        [
+          "اپلیکیشن مدیریت محصولات",
+           " صفحه وب برای افزودن محصولات و دسته‌بندی‌های آنها با قابلیت جستجو و مرتب‌سازی و فیلتر کردن و حذف محصولات",
+           "https://github.com/saharfallahi/ProductManagementApp",
+          "https://product-management-psi-swart.vercel.app",
+          "/ProductManagementApp.png",
+          ["React","TailwindCss","LocalStorage"]
+          ],
       ],
-      demo: "دمو",
-      code: "کد",
+      demo: "مشاهده آنلاین پروژه",
+      code: "کد پروژه",
     },
     contact: {
       title: "در تماس باشید",
@@ -110,7 +132,7 @@ const TRANSLATIONS = {
       ],
       stats: [
         ["4+", "Years of experience"],
-        ["25+", "Projects completed"],
+        ["10+", "Projects completed"],
         ["10+", "Open-source contributions"],
       ],
     },
@@ -121,19 +143,31 @@ const TRANSLATIONS = {
       title: "Projects",
       items: [
         [
-          "Lightweight admin panel",
-          "Responsive dashboard with charts, tables, and dark/light theme.",
+          "Iran Zamin Petrochemical Project",
+          "Industrial application for introducing petrochemical services with responsive design and optimized and fast images",
+          "https://github.com/saharfallahi/PetrochemicalApp",
+          "https://petrochemical-app.vercel.app/",
+          "/PetrochemicalApp.png",
+          ["React","TailwindCss","JSONServer"]
         ],
         [
-          "Marketing landing",
-          "Fast landing page with high Lighthouse score and solid SEO.",
+          "Freelacing App",
+          "freelance application with Responsive design has 3 roles Admin, Freelancer and Owner.login with mobile number and OTP.",
+          "https://github.com/saharfallahi/FreelancerApp",
+          "https://freelanceproject.ir",
+          "/FreelancingApp.png",
+          ["React","TailwindCss","MongoDB","Postman",]
         ],
         [
-          "Todo application",
-          "To-Do with Drag & Drop, filters, and local storage.",
+          "Product Management App",
+          "web page for add products and their categories with capability of search and sort and filter and delete on products",
+          "https://github.com/saharfallahi/ProductManagementApp",
+          "https://product-management-psi-swart.vercel.app",
+          "/ProductManagementApp.png",
+          ["React","TailwindCss","LocalStorage"]
         ],
       ],
-      demo: "Demo",
+      demo: "Online Demo",
       code: "Code",
     },
     contact: {
@@ -197,8 +231,6 @@ const TRANSLATIONS = {
 //   return { lang, dir, t, setLang, toggleLanguage };
 // }
 
-
-
 const I18nContext = createContext(null);
 
 export function I18nProvider({ children }) {
@@ -225,27 +257,33 @@ export function I18nProvider({ children }) {
 
   const dict = TRANSLATIONS[lang] || {};
 
-  const t = useCallback((key) => {
-    const parts = key.split(".");
-    let cur = dict;
-    for (const p of parts) {
-      if (cur && typeof cur === "object") cur = cur[p];
-      else return key;
-    }
-    return cur ?? key;
-  }, [dict]);
+  const t = useCallback(
+    (key) => {
+      const parts = key.split(".");
+      let cur = dict;
+      for (const p of parts) {
+        if (cur && typeof cur === "object") cur = cur[p];
+        else return key;
+      }
+      return cur ?? key;
+    },
+    [dict]
+  );
 
   const toggleLanguage = useCallback(() => {
     setLang((prev) => (prev === "fa" ? "en" : "fa"));
   }, []);
 
-  const value = useMemo(() => ({
-    lang,
-    dir: lang === "fa" ? "rtl" : "ltr",
-    t,
-    setLang,
-    toggleLanguage,
-  }), [lang, t, toggleLanguage]);
+  const value = useMemo(
+    () => ({
+      lang,
+      dir: lang === "fa" ? "rtl" : "ltr",
+      t,
+      setLang,
+      toggleLanguage,
+    }),
+    [lang, t, toggleLanguage]
+  );
 
   return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
 }

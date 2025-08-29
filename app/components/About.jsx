@@ -9,9 +9,9 @@ function About() {
 
   return (
     <section id="about" className="section section-alt">
-      <div className="container-std grid sm:grid-cols-1 md:grid-cols-[1.2fr_0.8fr] gap-8 items-center">
-        <div data-reveal>
-          <h2 className="section-title">{t("about.title")}</h2>
+          <h2 className="section-title" data-reveal>{t("about.title")}</h2>
+      <div className="container-std grid sm:grid-cols-1 md:grid-cols-[1.2fr_0.8fr] gap-8 items-center" data-reveal>
+        <div >
           {(t("about.body") || []).map((para, i) => (
             <p key={i} className="mb-3 last:mb-0">
               {para}

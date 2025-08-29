@@ -1,5 +1,6 @@
 "use client";
 
+import { FaGithub } from "react-icons/fa";
 import useI18n from "../hooks/useI18n";
 import useReveal from "../hooks/useReveal";
 
@@ -24,20 +25,22 @@ function Contact() {
   
   return (
     <section id="contact" className="section section-alt">
+          <h2 className="section-title"  data-reveal>{t("contact.title")}</h2>
       <div className="container-std grid md:grid-cols-2 gap-8 items-start">
         <div data-reveal>
-          <h2 className="section-title">{t("contact.title")}</h2>
           <p>{t("contact.body")}</p>
           <ul className="flex flex-wrap items-center gap-4 mt-4 p-0 list-none">
             <li>
               <a
                 className="inline-flex items-center gap-2 no-underline text-[var(--text)] hover:text-[var(--primary)]"
-                href="https://github.com/"
+                href="https://github.com/saharfallahi"
                 target="_blank"
                 rel="noopener"
                 aria-label={t("contact.github")}
               >
-                <span>GitHub</span>
+                <FaGithub className="w-5 h-5 md:w-6 md:h-6" />
+               
+              
               </a>
             </li>
             <li>

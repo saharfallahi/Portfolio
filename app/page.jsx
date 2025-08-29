@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { Suspense, useRef } from "react";
 import useI18n from "./hooks/useI18n";
 import Contact from "./components/Contact";
 import useParallax from "./hooks/useParallax";
@@ -11,8 +11,7 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
-
-
+import Loading from "./loading";
 
 export default function HomePage() {
   const { lang } = useI18n();
@@ -27,8 +26,9 @@ export default function HomePage() {
       <Home />
 
       <About />
-
-      <Skills />
+      <Suspense fallback={<Loading/>}>
+        <Skills />
+      </Suspense>
 
       <Projects />
 

@@ -5,6 +5,7 @@ import useI18n from "../hooks/useI18n";
 import useReveal from "../hooks/useReveal";
 import useParallax from "../hooks/useParallax";
 import { useRef } from "react";
+import { FaGithub, FaLinkedinIn, FaTelegramPlane } from "react-icons/fa";
 
 function Home() {
   const { t, lang } = useI18n();
@@ -16,7 +17,7 @@ function Home() {
     <section
       id="home"
       ref={heroRef}
-      className="section min-h-[88vh] grid place-items-center overflow-hidden"
+      className="section min-h-[88vh]  grid place-items-center overflow-hidden"
     >
       <div className="parallax" aria-hidden="true">
         <span className="layer layer--1" data-speed="0.12"></span>
@@ -24,11 +25,10 @@ function Home() {
         <span className="layer layer--3" data-speed="0.45"></span>
       </div>
       <div className="container-std">
-        <div className={`flex flex-col md:flex-row-reverse items-center justify-between gap-8`}>
         <div
-            className={`flex justify-center `}
-            data-reveal
-          >
+          className="flex flex-col md:flex-row-reverse items-center justify-between gap-8"
+        >
+          <div className="flex justify-center" data-reveal>
             <div
               className="relative w-52 h-52 sm:w-60 sm:h-60 md:w-96 md:h-96 rounded-full "
               // style={{
@@ -36,7 +36,6 @@ function Home() {
               //     "conic-gradient(from 180deg at 50% 50%, var(--primary), var(--primary-2)) ",
               // }}
             >
-             
               <Image
                 src="/saharfallahi.png"
                 alt={lang === "fa" ? "سحر فلاحی" : "sahar fallahi"}
@@ -51,9 +50,7 @@ function Home() {
           </div>
           <div
             className={`text-center ${
-              lang === "fa"
-                ? "md:text-right"
-                : "md:text-left "
+              lang === "fa" ? "md:text-right" : "md:text-left "
             }`}
             data-reveal
           >
@@ -87,8 +84,30 @@ function Home() {
                 {t("hero.ctaContact")}
               </a>
             </div>
+            <div className="flex items-center justify-center md:justify-start gap-x-4 mt-8">
+              <a
+                href="https://github.com/saharfallahi"
+                className="social-icon " 
+                target="_blank"
+              >
+                <FaGithub className="w-5 h-5 md:w-6 md:h-6" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/sahar-fallahi/"
+                className="social-icon"
+                target="_blank"
+              >
+                <FaLinkedinIn className="w-5 h-5 md:w-6 md:h-6" />
+              </a>
+              <a
+                href="https://t.me/SaharFallahi"
+                className="social-icon"
+                target="_blank"
+              >
+                <FaTelegramPlane className="w-5 h-5 md:w-6 md:h-6" />
+              </a>
+            </div>
           </div>
-         
         </div>
       </div>
     </section>
@@ -96,3 +115,7 @@ function Home() {
 }
 
 export default Home;
+
+
+
+// className="p-3 rounded-full bg-white/50 backdrop-blur-sm dark:bg-white/5 transition-all duration-300 hover:scale-110 shadow-sm border border-gray-200 dark:border-gray-800 hover:border-indigo-300 dark:hover:border-cyan-500/50 group dark:hover:bg-[#6e5494]/20 hover:bg-[#6e5494]/10"

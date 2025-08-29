@@ -8,7 +8,7 @@ const vazirmatn = Vazirmatn({
 });
 
 export const metadata = {
-  title: "Sahar Fallahi | Portfolio",
+  title: "Sahar Fallahi | سحر فلاحی",
   description: "Frontend Developer Portfolio",
 };
 
