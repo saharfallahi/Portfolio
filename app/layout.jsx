@@ -9,7 +9,7 @@ const vazirmatn = Vazirmatn({
 
 export const metadata = {
   title: "Sahar Fallahi | سحر فلاحی",
-  description: "Frontend Developer Portfolio",
+  description: "Frontend Developer Portfolio |پورتفولیو برنامه نویس وب و طراح سایت ",
 };
 
 export default function RootLayout({ children }) {
