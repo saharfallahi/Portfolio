@@ -32,7 +32,7 @@ const TRANSLATIONS = {
       title: "درباره‌من",
       body: [
         "من سحر فلاحی هستم؛ مسیری که تا امروز طی کرده‌ام، ترکیبی از علاقه به تکنولوژی، تحصیلات دانشگاهی و تجربه تدریس و کار عملی بوده است.",
-        "از همان روزهای دانشجویی در رشته مهندسی نرم‌افزار و بعدتر کارشناسی ارشد IT، دنیای طراحی و توسعه وب برای من فقط یک مهارت نبود، بلکه تبدیل شد به یک شیوه بیان خلاقیت.",
+        "از همان روزهای دانشجویی در رشته مهندسی نرم‌افزار و بعدتر کارشناسی ارشد IT، دنیای طراحی و توسعه وب برای من فقط یک مهارت نبود، بلکه تبدیل شد به یک شیوه خلق کردن.",
         "هشت سال تدریس در دانشگاه‌ها و مراکز علمی برای من فقط تجربه آموزش نبود؛ فرصتی بود تا یاد بگیرم چطور مفاهیم پیچیده را ساده و قابل‌فهم منتقل کنم، چطور شنونده نیازهای دیگران باشم و چطور تیم‌های مختلف را به سمت یک هدف مشترک هدایت کنم. این تجربه امروز در پروژه‌هایم یک مزیت منحصربه‌فرد است، چون به من کمک می‌کند هم نیاز کارفرما را درست درک کنم و هم با زبان ساده با تیم‌ها و کاربران ارتباط بگیرم.",
         "سه سال اخیر را به‌صورت تخصصی در زمینه توسعه فرانت‌اند با React، Next.js و Tailwind کار کرده‌ام و هر روز بیشتر به این باور می‌رسم که یک رابط کاربری خوب می‌تواند آینده یک کسب‌وکار را تغییر دهد. هدف من این است که با ترکیب تخصص فنی و مهارت‌های ارتباطی، پروژه‌هایی بسازم که هم کارآمد باشند و هم اثرگذار.",
       ],
@@ -120,7 +120,7 @@ const TRANSLATIONS = {
       title: "About me",
       body: [
         "I'm Sahar Fallahi. My journey blends a passion for technology, academic study, and years of teaching and hands-on work.",
-        "From my undergraduate studies in Software Engineering to an M.Sc. in IT, web design and development became more than a skill—it became my way to express creativity.",
+        "From my undergraduate studies in Software Engineering to an M.Sc. in IT, web design and development became more than a skill—it became a way of creating.",
         "Eight years of teaching at universities and institutes taught me how to distill complex ideas, listen to real needs, and guide diverse teams toward shared goals. This background is now a unique advantage in my projects: I can understand stakeholders clearly and communicate simply with both teams and users.",
         "Over the last three years I’ve specialized in front-end development with React, Next.js, and Tailwind, and I’m increasingly convinced that great UI can change a business’s future. My aim is to combine technical expertise with strong communication to build products that are both efficient and impactful.",
       ],
