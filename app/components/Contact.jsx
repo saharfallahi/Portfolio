@@ -3,6 +3,7 @@
 import { FaGithub } from "react-icons/fa";
 import useI18n from "../hooks/useI18n";
 import useReveal from "../hooks/useReveal";
+import { HiOutlineMail } from "react-icons/hi";
 
 function Contact() {
   const { t } = useI18n();
@@ -22,47 +23,56 @@ function Contact() {
     );
     window.location.href = `mailto:you@example.com?subject=${subject}&body=${body}`;
   };
-  
+
   return (
     <section id="contact" className="section section-alt">
-          <h2 className="section-title"  data-reveal>{t("contact.title")}</h2>
+      <h2 className="section-title" data-reveal>
+        {t("contact.title")}
+      </h2>
       <div className="container-std grid md:grid-cols-2 gap-8 items-start">
         <div data-reveal>
           <p>{t("contact.body")}</p>
-          <ul className="flex flex-wrap items-center gap-4 mt-4 p-0 list-none">
-            <li>
-              <a
-                className="inline-flex items-center gap-2 no-underline text-[var(--text)] hover:text-[var(--primary)]"
-                href="https://github.com/saharfallahi"
-                target="_blank"
-                rel="noopener"
-                aria-label={t("contact.github")}
-              >
-                <FaGithub className="w-5 h-5 md:w-6 md:h-6" />
-               
-              
-              </a>
-            </li>
-            <li>
-              <a
-                className="inline-flex items-center gap-2 no-underline text-[var(--text)] hover:text-[var(--primary)]"
-                href="https://www.linkedin.com/"
-                target="_blank"
-                rel="noopener"
-                aria-label={t("contact.linkedin")}
-              >
-                <span>LinkedIn</span>
-              </a>
-            </li>
-            <li>
-              <a
-                className="inline-flex items-center gap-2 no-underline text-[var(--text)]"
-                href="mailto:you@example.com"
-                aria-label={t("contact.emailLabel")}
-              >
-                📧 <span>you@example.com</span>
-              </a>
-            </li>
+          <ul className="flex flex-col  items-center gap-4 mt-4 p-0 list-none">
+            <div className="contact-card ">
+              <li>
+                <a
+                  className="inline-flex items-center gap-2 no-underline text-[var(--text)] hover:text-[var(--primary)]"
+                  href="https://github.com/saharfallahi"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label={t("contact.github")}
+                >
+                  <FaGithub className="w-5 h-5 md:w-6 md:h-6" />
+                </a>
+              </li>
+            </div>
+            <div className="contact-card ">
+              <li>
+                <a
+                  className="inline-flex items-center gap-2 no-underline text-[var(--text)] hover:text-[var(--primary)]"
+                  href="https://www.linkedin.com/"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label={t("contact.linkedin")}
+                >
+                  <span>LinkedIn</span>
+                </a>
+              </li>
+            </div>
+            <div className="contact-card ">
+              <HiOutlineMail  className="w-6 h-6"/>
+              <li>
+
+                <a
+                  className="flex flex-col items-start gap-2 no-underline text-[var(--text)]"
+                  href="mailto:you@example.com"
+                  aria-label={t("contact.emailLabel")}
+                >
+                  <span>ایمیل</span>
+                  <span>s.fallahi.66@gmail.com</span>
+                </a>
+              </li>
+            </div>
           </ul>
         </div>
         <form

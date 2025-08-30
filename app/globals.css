@@ -87,6 +87,9 @@ html {
   .social-icon {
     @apply p-3 rounded-full bg-[var(--bg-icon)]  transition-all duration-300 hover:scale-110 shadow-sm  border border-[var(--border-icon)] hover:border-[var(--ring)];
   }
+  .contact-card{
+    @apply w-full rounded-lg border border-[var(--border-icon)] shadow-sm p-6 bg-[var(--bg)]
+  }
 }
 
 .parallax {

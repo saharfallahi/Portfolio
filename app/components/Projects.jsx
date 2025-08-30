@@ -49,6 +49,7 @@ function Projects() {
                     <a
                       href={demo}
                       target="_blank"
+                      rel="noopener"
                       className="btn btn-primary !py-2 !px-3 text-sm"
                     >
                       {t("projects.demo")}
@@ -56,6 +57,7 @@ function Projects() {
                     <a
                       href={code}
                       target="_blank"
+                      rel="noopener"
                       className="btn btn-ghost !py-2 !px-3 text-sm"
                     >
                       {t("projects.code")}
