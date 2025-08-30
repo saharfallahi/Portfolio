@@ -68,7 +68,7 @@ html {
     background: var(--surface)
   }
   .section {
-    @apply py-24 relative;
+    @apply py-20 relative;
   }
   .section-alt {
     background: linear-gradient(
