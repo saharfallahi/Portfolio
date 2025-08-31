@@ -1,9 +1,9 @@
 "use client";
 
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaTelegramPlane } from "react-icons/fa";
 import useI18n from "../hooks/useI18n";
 import useReveal from "../hooks/useReveal";
-import { HiOutlineMail } from "react-icons/hi";
+import { HiOutlineMail, HiOutlinePhone } from "react-icons/hi";
 
 function Contact() {
   const { t } = useI18n();
@@ -29,97 +29,127 @@ function Contact() {
       <h2 className="section-title" data-reveal>
         {t("contact.title")}
       </h2>
-      <div className="container-std grid md:grid-cols-2 gap-8 items-start">
-        <div data-reveal>
-          <p>{t("contact.body")}</p>
-          <ul className="flex flex-col  items-center gap-4 mt-4 p-0 list-none">
-            <div className="contact-card ">
-              <li>
-                <a
-                  className="inline-flex items-center gap-2 no-underline text-[var(--text)] hover:text-[var(--primary)]"
-                  href="https://github.com/saharfallahi"
-                  target="_blank"
-                  rel="noopener"
-                  aria-label={t("contact.github")}
-                >
-                  <FaGithub className="w-5 h-5 md:w-6 md:h-6" />
-                </a>
-              </li>
+      <div className="container-std">
+        <p className="text-center mb-10 text-[var(--text)]" data-reveal>
+          {t("contact.body")}
+        </p>
+        <div className=" grid md:grid-cols-2 gap-8 items-start">
+          <div data-reveal>
+            <ul className="flex flex-col  items-center gap-4 mt-4 p-0 list-none">
+              <div className="contact-card ">
+                <div className="flex items-center gap-2 mb-4">
+                  <HiOutlineMail className=" w-5 h-5 text-[var(--primary)]" />
+                  <h3 className="text-[var(--primary)] font-bold ">
+                    {t("contact.emailLabel")}
+                  </h3>
+                </div>
+                <div className="flex items-center justify-end gap-x-4 ]">
+                  <a
+                    className="text-[var(--text) font-semibold"
+                    href="mailto:s.fallahi.66@gmail.com"
+                    aria-label={t("contact.emailLabel")}
+                  >
+                    s.fallahi.66@gmail.com
+                  </a>
+                </div>
+              </div>
+              <div className="contact-card ">
+                <div className="flex items-center gap-2 mb-4">
+                  <HiOutlinePhone className=" w-5 h-5 text-[var(--primary)]" />
+                  <h3 className="text-[var(--primary)] font-bold ">
+                    {t("contact.call")}
+                  </h3>
+                </div>
+                <div className="flex items-center justify-end gap-x-4">
+                  <a
+                    href="tel:09169629957"
+                    className="font-semibold text-[var(--text) "
+                    rel="noopener"
+                    target="_blank"
+                  >
+                    09169629957
+                  </a>
+                </div>
+              </div>
+              <div className="contact-card ">
+                <h3 className="text-[var(--primary)] font-bold mb-4">
+                  {t("contact.connect")}
+                </h3>
+                <div className="flex items-center justify-end gap-x-4">
+                  <a
+                    href="https://github.com/saharfallahi"
+                    className="social-icon "
+                    rel="noopener"
+                    target="_blank"
+                  >
+                    <FaGithub className="w-4 h-4 md:w-5 md:h-5" />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/sahar-fallahi/"
+                    className="social-icon"
+                    rel="noopener"
+                    target="_blank"
+                  >
+                    <FaLinkedinIn className="w-4 h-4 md:w-5 md:h-5" />
+                  </a>
+                  <a
+                    href="https://t.me/SaharFallahi"
+                    className="social-icon"
+                    rel="noopener"
+                    target="_blank"
+                  >
+                    <FaTelegramPlane className="w-4 h-4 md:w-5 md:h-5" />
+                  </a>
+                </div>
+              </div>
+            </ul>
+          </div>
+          <form
+            onSubmit={submitContact}
+            className="bg-[var(--surface)] border border-[color-mix(in_oklab,var(--text),transparent_85%)] rounded-2xl p-4"
+            data-reveal
+            data-reveal-delay="120"
+          >
+            <div className="flex flex-col gap-1.5 mb-3">
+              <label htmlFor="name">{t("contact.name")}</label>
+              <input
+                id="name"
+                name="name"
+                required
+                placeholder={t("contact.namePlaceholder")}
+                className="bg-transparent border border-[color-mix(in_oklab,var(--text),transparent_80%)] text-[var(--text)] rounded-lg px-3 py-2 outline-none focus-visible:ring-4 focus-visible:ring-[var(--ring)] focus:border-transparent"
+              />
             </div>
-            <div className="contact-card ">
-              <li>
-                <a
-                  className="inline-flex items-center gap-2 no-underline text-[var(--text)] hover:text-[var(--primary)]"
-                  href="https://www.linkedin.com/"
-                  target="_blank"
-                  rel="noopener"
-                  aria-label={t("contact.linkedin")}
-                >
-                  <span>LinkedIn</span>
-                </a>
-              </li>
+            <div className="flex flex-col gap-1.5 mb-3">
+              <label htmlFor="email">{t("contact.email")}</label>
+              <input
+                id="email"
+                name="email"
+                required
+                placeholder={t("contact.emailPlaceholder")}
+                type="email"
+                className="bg-transparent border border-[color-mix(in_oklab,var(--text),transparent_80%)] text-[var(--text)] rounded-lg px-3 py-2 outline-none focus-visible:ring-4 focus-visible:ring-[var(--ring)] focus:border-transparent"
+              />
             </div>
-            <div className="contact-card ">
-              <HiOutlineMail  className="w-6 h-6"/>
-              <li>
-
-                <a
-                  className="flex flex-col items-start gap-2 no-underline text-[var(--text)]"
-                  href="mailto:you@example.com"
-                  aria-label={t("contact.emailLabel")}
-                >
-                  <span>ایمیل</span>
-                  <span>s.fallahi.66@gmail.com</span>
-                </a>
-              </li>
+            <div className="flex flex-col gap-1.5 mb-3">
+              <label htmlFor="message">{t("contact.message")}</label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows={4}
+                placeholder={t("contact.messagePlaceholder")}
+                className="bg-transparent border border-[color-mix(in_oklab,var(--text),transparent_80%)] text-[var(--text)] rounded-lg px-3 py-2 outline-none focus-visible:ring-4 focus-visible:ring-[var(--ring)] focus:border-transparent"
+              />
             </div>
-          </ul>
+            <button type="submit" className="btn btn-primary">
+              {t("contact.submit")}
+            </button>
+            <p className="text-[var(--muted)] text-sm mt-2">
+              {t("contact.submitHint")}
+            </p>
+          </form>
         </div>
-        <form
-          onSubmit={submitContact}
-          className="bg-[var(--surface)] border border-[color-mix(in_oklab,var(--text),transparent_85%)] rounded-2xl p-4"
-          data-reveal
-          data-reveal-delay="120"
-        >
-          <div className="flex flex-col gap-1.5 mb-3">
-            <label htmlFor="name">{t("contact.name")}</label>
-            <input
-              id="name"
-              name="name"
-              required
-              placeholder={t("contact.namePlaceholder")}
-              className="bg-transparent border border-[color-mix(in_oklab,var(--text),transparent_80%)] text-[var(--text)] rounded-lg px-3 py-2 outline-none focus-visible:ring-4 focus-visible:ring-[var(--ring)] focus:border-transparent"
-            />
-          </div>
-          <div className="flex flex-col gap-1.5 mb-3">
-            <label htmlFor="email">{t("contact.email")}</label>
-            <input
-              id="email"
-              name="email"
-              required
-              placeholder={t("contact.emailPlaceholder")}
-              type="email"
-              className="bg-transparent border border-[color-mix(in_oklab,var(--text),transparent_80%)] text-[var(--text)] rounded-lg px-3 py-2 outline-none focus-visible:ring-4 focus-visible:ring-[var(--ring)] focus:border-transparent"
-            />
-          </div>
-          <div className="flex flex-col gap-1.5 mb-3">
-            <label htmlFor="message">{t("contact.message")}</label>
-            <textarea
-              id="message"
-              name="message"
-              required
-              rows={4}
-              placeholder={t("contact.messagePlaceholder")}
-              className="bg-transparent border border-[color-mix(in_oklab,var(--text),transparent_80%)] text-[var(--text)] rounded-lg px-3 py-2 outline-none focus-visible:ring-4 focus-visible:ring-[var(--ring)] focus:border-transparent"
-            />
-          </div>
-          <button type="submit" className="btn btn-primary">
-            {t("contact.submit")}
-          </button>
-          <p className="text-[var(--muted)] text-sm mt-2">
-            {t("contact.submitHint")}
-          </p>
-        </form>
       </div>
     </section>
   );

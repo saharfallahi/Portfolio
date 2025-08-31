@@ -78,8 +78,8 @@ const TRANSLATIONS = {
       code: "کد پروژه",
     },
     contact: {
-      title: "در تماس باشید",
-      body: "برای همکاری، پروژه جدید یا فقط سلام کردن خوشحال می‌شوم پیام بدهید.",
+      title: "ارتباط با من",
+      body: "برای همکاری، پروژه یا ایده جدید یا مشاوره در زمینه توسعه وب خوشحال می‌شوم پیام بدهید.",
       github: "گیت‌هاب",
       linkedin: "لینکدین",
       emailLabel: "ایمیل",
@@ -93,6 +93,8 @@ const TRANSLATIONS = {
       submitHint: "ارسال، برنامه ایمیل شما را باز می‌کند.",
       emailSubjectPrefix: "پیام از",
       emailSender: "ارسال کننده",
+      connect:"شبکه های اجتماعی",
+      call:"شماره تماس"
     },
     footer: {
       note: " سحر فلاحی. همه حقوق محفوظ است.",
@@ -171,8 +173,8 @@ const TRANSLATIONS = {
       code: "Code",
     },
     contact: {
-      title: "Get in touch",
-      body: "I'd love to hear from you about collaborations, new projects, or just to say hi.",
+      title: "Contact me",
+      body: "I would be happy to send you a message for collaboration, new projects or ideas, or advice on web development.",
       github: "GitHub",
       linkedin: "LinkedIn",
       emailLabel: "Email",
@@ -186,6 +188,8 @@ const TRANSLATIONS = {
       submitHint: "Submitting opens your email client.",
       emailSubjectPrefix: "Message from",
       emailSender: "Sender",
+      connect:"Connect with me",
+      call:"Phone Number"
     },
     footer: {
       note: " Sahar Fallahi. All rights reserved.",
@@ -234,7 +238,7 @@ const TRANSLATIONS = {
 const I18nContext = createContext(null);
 
 export function I18nProvider({ children }) {
-  const [lang, setLang] = useState("en");
+  const [lang, setLang] = useState("fa");
 
   // hydrate from localStorage
   useEffect(() => {
