@@ -21,7 +21,7 @@ function Contact() {
     const body = encodeURIComponent(
       `${message}\n\n${t("contact.emailSender")}: ${name} <${email}>`
     );
-    window.location.href = `mailto:you@example.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:s.fallahi.66@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -139,7 +139,7 @@ function Contact() {
                 required
                 rows={4}
                 placeholder={t("contact.messagePlaceholder")}
-                className="bg-[var(--surface)] border border-[var(--border-icon)] text-[var(--text)] rounded-lg px-3 py-2 outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)] focus:border-transparent"
+                className="bg-[var(--surface)] border border-[var(--border-icon)] text-[var(--text)] rounded-lg px-3 py-2 outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)] focus:border-transparent resize-none"
               />
             </div>
             <button type="submit" className="btn btn-primary">
