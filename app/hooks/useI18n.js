@@ -79,7 +79,7 @@ const TRANSLATIONS = {
     },
     contact: {
       title: "ارتباط با من",
-      body: "برای همکاری، پروژه یا ایده جدید یا مشاوره در زمینه توسعه وب خوشحال می‌شوم پیام بدهید.",
+      body: "برای همکاری، پروژه و ایده جدید یا مشاوره در زمینه توسعه وب خوشحال می‌شوم پیام بدهید.",
       github: "گیت‌هاب",
       linkedin: "لینکدین",
       emailLabel: "ایمیل",
@@ -174,7 +174,7 @@ const TRANSLATIONS = {
     },
     contact: {
       title: "Contact me",
-      body: "I would be happy to send you a message for collaboration, new projects or ideas, or advice on web development.",
+      body: "I would be happy to send you a message for collaboration, new projects and ideas, or advice on web development.",
       github: "GitHub",
       linkedin: "LinkedIn",
       emailLabel: "Email",

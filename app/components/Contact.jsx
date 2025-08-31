@@ -106,7 +106,7 @@ function Contact() {
           </div>
           <form
             onSubmit={submitContact}
-            className="bg-[var(--surface)] border border-[color-mix(in_oklab,var(--text),transparent_85%)] rounded-2xl p-4"
+            className="rounded-2xl border border-[var(--border-icon)] shadow-sm p-6 bg-[var(--bg)]"
             data-reveal
             data-reveal-delay="120"
           >
@@ -117,7 +117,7 @@ function Contact() {
                 name="name"
                 required
                 placeholder={t("contact.namePlaceholder")}
-                className="bg-transparent border border-[color-mix(in_oklab,var(--text),transparent_80%)] text-[var(--text)] rounded-lg px-3 py-2 outline-none focus-visible:ring-4 focus-visible:ring-[var(--ring)] focus:border-transparent"
+                className="bg-[var(--surface)] border border-[var(--border-icon)] text-[var(--text)] rounded-lg px-3 py-2 outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)] focus:border-transparent"
               />
             </div>
             <div className="flex flex-col gap-1.5 mb-3">
@@ -128,7 +128,7 @@ function Contact() {
                 required
                 placeholder={t("contact.emailPlaceholder")}
                 type="email"
-                className="bg-transparent border border-[color-mix(in_oklab,var(--text),transparent_80%)] text-[var(--text)] rounded-lg px-3 py-2 outline-none focus-visible:ring-4 focus-visible:ring-[var(--ring)] focus:border-transparent"
+                className="bg-[var(--surface)] border border-[var(--border-icon)] text-[var(--text)] rounded-lg px-3 py-2 outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)] focus:border-transparent"
               />
             </div>
             <div className="flex flex-col gap-1.5 mb-3">
@@ -139,7 +139,7 @@ function Contact() {
                 required
                 rows={4}
                 placeholder={t("contact.messagePlaceholder")}
-                className="bg-transparent border border-[color-mix(in_oklab,var(--text),transparent_80%)] text-[var(--text)] rounded-lg px-3 py-2 outline-none focus-visible:ring-4 focus-visible:ring-[var(--ring)] focus:border-transparent"
+                className="bg-[var(--surface)] border border-[var(--border-icon)] text-[var(--text)] rounded-lg px-3 py-2 outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)] focus:border-transparent"
               />
             </div>
             <button type="submit" className="btn btn-primary">
