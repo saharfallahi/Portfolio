@@ -137,7 +137,7 @@ function Header() {
       >
         <div className="px-2 pt-4 pb-3 space-y-2 sm:px-3 text-sm md:text-base  ">
           {links.map(([label, href]) => (
-            <li key={href} className="py-3 px-2 rounded-lg text-[--text] hover:text-[var(--primary-2)] hover:bg-[var(--surface)]">
+            <li key={href} onClick={()=>setIsOpen(false)} className="py-3 px-2 rounded-lg text-[--text] hover:text-[var(--primary-2)] hover:bg-[var(--surface)]">
               <a href={href} className="block">{label}</a>
             </li>
           ))}
