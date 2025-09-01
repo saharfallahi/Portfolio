@@ -109,7 +109,11 @@ function Header() {
           </button>
           <button>
             <a
-              href={lang === "fa" ? "rezume-example.pdf" : "rezume-example.pdf"}
+              href={
+                lang === "fa"
+                  ? "saharfallahi-cv-fa.pdf"
+                  : "saharfallahi-cv-fa.pdf"
+              }
               download
               className="hidden md:block btn btn-primary py-2 "
             >
@@ -144,7 +148,11 @@ function Header() {
           ))}
           <li>
             <a
-              href={lang === "fa" ? "rezume-example.pdf" : "rezume-example.pdf"}
+              href={
+                lang === "fa"
+                  ? "saharfallahi-cv-fa.pdf"
+                  : "saharfallahi-cv-fa.pdf"
+              }
               download
               className="block  btn btn-primary "
               onClick={() => setIsOpen(false)}
