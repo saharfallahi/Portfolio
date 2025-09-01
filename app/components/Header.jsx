@@ -118,7 +118,7 @@ function Header() {
               className="hidden md:block btn btn-primary py-2 "
             >
               <span className="flex flex-row gap-2 items-center ">
-                <IoDocumentTextOutline/>
+                <IoDocumentTextOutline />
                 {lang === "fa" ? "رزومه" : "Resume"}
               </span>
             </a>
@@ -127,7 +127,6 @@ function Header() {
       </div>
       <div
         ref={ref}
-        
         className={`md:hidden transition-all duration-300 ease-in-out transform 
           ${
             isOpen
@@ -137,8 +136,14 @@ function Header() {
       >
         <div className="px-2 pt-4 pb-3 space-y-2 sm:px-3 text-sm md:text-base  ">
           {links.map(([label, href]) => (
-            <li key={href} onClick={()=>setIsOpen(false)} className="py-3 px-2 rounded-lg text-[--text] hover:text-[var(--primary-2)] hover:bg-[var(--surface)]">
-              <a href={href} className="block">{label}</a>
+            <li
+              key={href}
+              onClick={() => setIsOpen(false)}
+              className="py-3 px-2 rounded-lg text-[--text] hover:text-[var(--primary-2)] hover:bg-[var(--surface)]"
+            >
+              <a href={href} className="block">
+                {label}
+              </a>
             </li>
           ))}
           <li>
@@ -151,10 +156,10 @@ function Header() {
               download
               className="block  btn btn-primary "
             >
-             <button className="w-full flex flex-row gap-1 items-center justify-center">
-             <IoDocumentTextOutline />
-             {lang === "fa" ? "رزومه" : "Resume"}
-             </button>
+              <button className="w-full flex flex-row gap-1 items-center justify-center">
+                <IoDocumentTextOutline />
+                {lang === "fa" ? "رزومه" : "Resume"}
+              </button>
             </a>
           </li>
         </div>
