@@ -109,11 +109,7 @@ function Header() {
           </button>
           <button>
             <a
-              href={
-                lang === "fa"
-                  ? "./saharfallahi-cv-fa.pdf"
-                  : "./saharfallahi-cv-fa.pdf"
-              }
+              href={lang === "fa" ? "rezume-example.pdf" : "rezume-example.pdf"}
               download
               className="hidden md:block btn btn-primary py-2 "
             >
@@ -148,13 +144,10 @@ function Header() {
           ))}
           <li>
             <a
-              href={
-                lang === "fa"
-                  ? "./saharfallahi-cv-fa.pdf"
-                  : "./saharfallahi-cv-fa.pdf"
-              }
+              href={lang === "fa" ? "rezume-example.pdf" : "rezume-example.pdf"}
               download
               className="block  btn btn-primary "
+              onClick={() => setIsOpen(false)}
             >
               <button className="w-full flex flex-row gap-1 items-center justify-center">
                 <IoDocumentTextOutline />
@@ -169,3 +162,5 @@ function Header() {
 }
 
 export default Header;
+
+// "./saharfallahi-cv-fa.pdf"
