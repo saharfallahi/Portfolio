@@ -24,7 +24,7 @@ function Header() {
     [t("nav.contact"), "#contact"],
   ];
   return (
-    <header className="sticky top-0 z-50 backdrop-saturate-150 backdrop-blur bg-gradient-to-b from-[color-mix(in_oklab,var(--bg),transparent_40%)] to-transparent border-b border-[color-mix(in_oklab,var(--text),transparent_90%)]">
+    <header className="fixed w-full top-0 z-50 backdrop-saturate-150 backdrop-blur bg-gradient-to-b from-[color-mix(in_oklab,var(--bg),transparent_40%)] to-transparent border-b border-[color-mix(in_oklab,var(--text),transparent_90%)]">
       <div className="container-std min-h-16 flex items-center justify-between gap-4">
         <a
           href="#home"

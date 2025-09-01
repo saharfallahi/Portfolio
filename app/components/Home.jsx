@@ -17,7 +17,7 @@ function Home() {
     <section
       id="home"
       ref={heroRef}
-      className="section min-h-screen  grid place-items-center overflow-hidden"
+      className="section min-h-[88vh]  grid place-items-center overflow-hidden"
     >
       <div className="parallax" aria-hidden="true">
         <span className="layer layer--1" data-speed="0.12"></span>

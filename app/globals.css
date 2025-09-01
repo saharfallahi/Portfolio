@@ -31,6 +31,7 @@
 
 html {
   scroll-behavior: smooth;
+  /* scroll-padding-top: 64px; /* height of sticky header */
 }
 
 @layer base {
@@ -68,7 +69,7 @@ html {
     background: var(--surface)
   }
   .section {
-    @apply py-20 relative;
+    @apply py-20 relative ;
   }
   .section-alt {
     background: linear-gradient(
