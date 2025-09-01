@@ -112,7 +112,7 @@ function Header() {
               href={
                 lang === "fa"
                   ? "/saharfallahi-cv-fa.pdf"
-                  : "/saharfallahi-cv-en.pdf"
+                  : "/saharfallahi-cv-fa.pdf"
               }
               download
               className="hidden md:block btn btn-primary py-2 "
@@ -146,7 +146,7 @@ function Header() {
               href={
                 lang === "fa"
                   ? "/saharfallahi-cv-fa.pdf"
-                  : "/saharfallahi-cv-en.pdf"
+                  : "/saharfallahi-cv-fa.pdf"
               }
               download
               className="block  btn btn-primary "
