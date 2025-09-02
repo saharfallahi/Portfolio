@@ -78,6 +78,13 @@ html {
       transparent
     );
   }
+  .about-card{
+    background: linear-gradient(
+      90deg,
+      color-mix(in oklab, var(--primary), transparent 80%),
+      transparent
+      )
+  }
   .card {
     @apply bg-[var(--surface)] rounded-2xl overflow-hidden border;
     border-color: color-mix(in oklab, var(--text), transparent 85%);
