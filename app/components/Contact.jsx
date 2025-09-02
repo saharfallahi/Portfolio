@@ -131,7 +131,7 @@ function Contact() {
                 className="bg-[var(--surface)] border border-[var(--border-icon)] text-[var(--text)] rounded-lg px-3 py-2 outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)] focus:border-transparent"
               />
             </div>
-            <div className="flex flex-col gap-1.5 mb-3">
+            <div className="flex flex-col gap-1.5 mb-4">
               <label htmlFor="message">{t("contact.message")}</label>
               <textarea
                 id="message"
@@ -142,7 +142,7 @@ function Contact() {
                 className="bg-[var(--surface)] border border-[var(--border-icon)] text-[var(--text)] rounded-lg px-3 py-2 outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)] focus:border-transparent resize-none"
               />
             </div>
-            <button type="submit" className="w-full flex justify-center btn btn-primary !py-2">
+            <button type="submit" className="w-full md:w-auto flex justify-center btn btn-primary !py-2">
               {t("contact.submit")}
             </button>
             <p className="text-[var(--muted)] text-sm mt-2">

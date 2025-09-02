@@ -74,7 +74,7 @@ html {
   .section-alt {
     background: linear-gradient(
       180deg,
-      color-mix(in oklab, var(--text), transparent 96%),
+      color-mix(in oklab, var(--primary), transparent 85%),
       transparent
     );
   }
