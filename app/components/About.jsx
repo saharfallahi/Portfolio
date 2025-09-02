@@ -14,11 +14,11 @@ function About() {
       <div className="container-std grid sm:grid-cols-1 md:grid-cols-[1.2fr_0.8fr] gap-8 items-center" data-reveal>
         <div >
           {(t("about.body") || []).map((para, i) => (
-            <p key={i} className="mb-3 last:mb-0">
+            <p key={i} className="mb-4 last:mb-0">
               {para}
             </p>
           ))}
-          <ul className="flex flex-wrap gap-2 mt-4 p-0 list-none">
+          <ul className="flex flex-wrap gap-2 mt-6 p-0 list-none">
             {(t("about.badges") || []).map((b) => (
               <li
                 key={b}
