@@ -36,7 +36,7 @@ const TRANSLATIONS = {
         "هشت سال تدریس در دانشگاه‌ها و مراکز علمی برای من فقط تجربه آموزش نبود؛ فرصتی بود تا یاد بگیرم چطور مفاهیم پیچیده را ساده و قابل‌فهم منتقل کنم، چطور شنونده نیازهای دیگران باشم و چطور تیم‌های مختلف را به سمت یک هدف مشترک هدایت کنم. این تجربه امروز در پروژه‌هایم یک مزیت منحصربه‌فرد است، چون به من کمک می‌کند هم نیاز کارفرما را درست درک کنم و هم با زبان ساده با تیم‌ها و کاربران ارتباط بگیرم.",
         "چهار سال اخیر را به‌صورت تخصصی در زمینه توسعه فرانت‌اند کار کرده‌ام و هر روز بیشتر به این باور می‌رسم که یک رابط کاربری خوب می‌تواند آینده یک کسب‌وکار را تغییر دهد. هدف من این است که با ترکیب تخصص فنی و مهارت‌های ارتباطی، پروژه‌هایی بسازم که هم کارآمد باشند و هم اثرگذار.",
       ],
-      badges: ["عملکرد بالا", "دسترسی‌پذیری", "کدنویسی تمیز", "طراحی پاسخ‌گرا"],
+      badges: ["عملکرد بالا", "کدنویسی تمیز", "طراحی واکنش گرا"],
       stats: [
         ["4+", "سال تجربه"],
         ["10+", "پروژه تکمیل‌شده"],
@@ -55,7 +55,7 @@ const TRANSLATIONS = {
           "https://github.com/saharfallahi/PetrochemicalApp",
           "https://petrochemical-app.vercel.app/",
           "/PetrochemicalApp.png",
-          ["React","TailwindCss","JSONServer"]
+          ["React", "TailwindCss", "JSONServer"],
         ],
         [
           "اپلیکیشن فریلنسری",
@@ -63,16 +63,16 @@ const TRANSLATIONS = {
           "https://github.com/saharfallahi/FreelancerApp",
           "https://freelanceproject.ir",
           "/FreelancingApp.png",
-          ["React","TailwindCss","MongoDB","Postman",]
+          ["React", "TailwindCss", "MongoDB", "Postman"],
         ],
         [
           "اپلیکیشن مدیریت محصولات",
-           " صفحه وب برای افزودن محصولات و دسته‌بندی‌های آنها با قابلیت جستجو و مرتب‌سازی و فیلتر کردن و حذف محصولات",
-           "https://github.com/saharfallahi/ProductManagementApp",
+          " صفحه وب برای افزودن محصولات و دسته‌بندی‌های آنها با قابلیت جستجو و مرتب‌سازی و فیلتر کردن و حذف محصولات",
+          "https://github.com/saharfallahi/ProductManagementApp",
           "https://product-management-psi-swart.vercel.app",
           "/ProductManagementApp.png",
-          ["React","TailwindCss","LocalStorage"]
-          ],
+          ["React", "TailwindCss", "LocalStorage"],
+        ],
       ],
       demo: "مشاهده آنلاین پروژه",
       code: "کد پروژه",
@@ -93,8 +93,8 @@ const TRANSLATIONS = {
       submitHint: "ارسال، برنامه ایمیل شما را باز می‌کند.",
       emailSubjectPrefix: "پیام از",
       emailSender: "ارسال کننده",
-      connect:"شبکه های اجتماعی",
-      call:"شماره تماس"
+      connect: "شبکه های اجتماعی",
+      call: "شماره تماس",
     },
     footer: {
       note: " سحر فلاحی. همه حقوق محفوظ است.",
@@ -126,12 +126,7 @@ const TRANSLATIONS = {
         "Eight years of teaching at universities and institutes taught me how to distill complex ideas, listen to real needs, and guide diverse teams toward shared goals. This background is now a unique advantage in my projects: I can understand stakeholders clearly and communicate simply with both teams and users.",
         "Over the last four years I’ve specialized in front-end development and I’m increasingly convinced that great UI can change a business’s future. My aim is to combine technical expertise with strong communication to build products that are both efficient and impactful.",
       ],
-      badges: [
-        "High performance",
-        "Accessibility",
-        "Clean code",
-        "Responsive design",
-      ],
+      badges: ["High performance", "Clean code", "Responsive design"],
       stats: [
         ["4+", "Years of experience"],
         ["10+", "Completed Projects"],
@@ -150,7 +145,7 @@ const TRANSLATIONS = {
           "https://github.com/saharfallahi/PetrochemicalApp",
           "https://petrochemical-app.vercel.app/",
           "/PetrochemicalApp.png",
-          ["React","TailwindCss","JSONServer"]
+          ["React", "TailwindCss", "JSONServer"],
         ],
         [
           "Freelacing App",
@@ -158,7 +153,7 @@ const TRANSLATIONS = {
           "https://github.com/saharfallahi/FreelancerApp",
           "https://freelanceproject.ir",
           "/FreelancingApp.png",
-          ["React","TailwindCss","MongoDB","Postman",]
+          ["React", "TailwindCss", "MongoDB", "Postman"],
         ],
         [
           "Product Management App",
@@ -166,7 +161,7 @@ const TRANSLATIONS = {
           "https://github.com/saharfallahi/ProductManagementApp",
           "https://product-management-psi-swart.vercel.app",
           "/ProductManagementApp.png",
-          ["React","TailwindCss","LocalStorage"]
+          ["React", "TailwindCss", "LocalStorage"],
         ],
       ],
       demo: "Online Demo",
@@ -188,8 +183,8 @@ const TRANSLATIONS = {
       submitHint: "Submitting opens your email client.",
       emailSubjectPrefix: "Message from",
       emailSender: "Sender",
-      connect:"Connect with me",
-      call:"Phone Number"
+      connect: "Connect with me",
+      call: "Phone Number",
     },
     footer: {
       note: " Sahar Fallahi. All rights reserved.",
