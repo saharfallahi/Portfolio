@@ -38,7 +38,8 @@ const TRANSLATIONS = {
       ],
       badges: ["عملکرد بالا", "کدنویسی تمیز", "طراحی واکنش گرا"],
       stats: [
-        ["4+", "سال تجربه"],
+        ["8+", "سال تدریس"],
+        ["4+", "سال فریلنسری"],
         ["10+", "پروژه تکمیل‌شده"],
         ["20+", "تکنولوژی مسلط"],
       ],
@@ -128,7 +129,8 @@ const TRANSLATIONS = {
       ],
       badges: ["High performance", "Clean code", "Responsive design"],
       stats: [
-        ["4+", "Years of experience"],
+        ["8+", "Years of Teaching"],
+        ["4+", "Years of Freelancing"],
         ["10+", "Completed Projects"],
         ["20+", "Mastered Technologies"],
       ],
