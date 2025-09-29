@@ -35,7 +35,7 @@ function Contact() {
         </p>
         <div className=" grid md:grid-cols-2 gap-8 items-start">
           <div data-reveal>
-            <ul className="flex flex-col  items-center gap-4 p-0 list-none">
+            <ul className="flex flex-col  items-center gap-2 p-0 list-none">
               <div className="contact-card ">
                 <div className="flex items-center gap-2 mb-4">
                   <HiOutlineMail className=" w-5 h-5 text-[var(--primary)]" />
@@ -54,7 +54,7 @@ function Contact() {
                 </div>
               </div>
               <div className="contact-card ">
-                <div className="flex items-center gap-2 mb-4">
+                <div className="flex items-center gap-2 mb-4 md:mb-2">
                   <HiOutlinePhone className=" w-5 h-5 text-[var(--primary)]" />
                   <h3 className="text-[var(--primary)] font-bold ">
                     {t("contact.call")}
@@ -118,7 +118,7 @@ function Contact() {
           </div>
           <form
             onSubmit={submitContact}
-            className="rounded-2xl border border-[var(--border-icon)] shadow-sm p-6 bg-[var(--bg)]"
+            className="rounded-2xl border border-[var(--border-icon)] shadow-sm px-6 py-8 bg-[var(--bg)]"
             data-reveal
             data-reveal-delay="120"
           >
@@ -154,7 +154,7 @@ function Contact() {
                 className="bg-[var(--surface)] border border-[var(--border-icon)] text-[var(--text)] rounded-lg px-3 py-2 outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)] focus:border-transparent resize-none"
               />
             </div>
-            <button type="submit" className="w-full md:w-auto flex justify-center btn btn-primary !py-2">
+            <button type="submit" className="w-full md:w-auto flex justify-center btn btn-primary !py-2 mt-8 ">
               {t("contact.submit")}
             </button>
             <p className="text-[var(--muted)] text-sm mt-2">
