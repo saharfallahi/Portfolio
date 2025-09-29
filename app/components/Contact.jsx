@@ -103,7 +103,7 @@ function Contact() {
                 </div>
               </div>
               <div className="contact-card ">
-                <div className="flex items-center gap-2 mb-4 md:mb-0">
+                <div className="flex justify-start gap-2 mb-4 md:mb-0">
                   <h3 className="text-[var(--primary)] font-bold ">
                     {t("contact.licenses")}
                   </h3>
