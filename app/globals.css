@@ -96,7 +96,7 @@ html {
     @apply p-3 rounded-full bg-[var(--bg-icon)]  transition-all duration-300 hover:scale-110 shadow-sm  border border-[var(--border-icon)] hover:border-[var(--ring)];
   }
   .contact-card{
-    @apply md:flex md:items-center md:justify-between w-full rounded-2xl border border-[var(--border-icon)] shadow-sm p-6 md:p-4 bg-[var(--bg)]
+    @apply md:flex md:items-center md:justify-between w-full rounded-2xl border border-[var(--border-icon)] shadow-sm p-6  bg-[var(--bg)]
   }
 }
 

@@ -37,7 +37,7 @@ function Contact() {
           <div data-reveal>
             <ul className="flex flex-col  items-center gap-2 p-0 list-none">
               <div className="contact-card ">
-                <div className="flex items-center gap-2 mb-4">
+                <div className="flex items-center gap-2 mb-4  md:mb-0">
                   <HiOutlineMail className=" w-5 h-5 text-[var(--primary)]" />
                   <h3 className="text-[var(--primary)] font-bold ">
                     {t("contact.emailLabel")}
@@ -54,7 +54,7 @@ function Contact() {
                 </div>
               </div>
               <div className="contact-card ">
-                <div className="flex items-center gap-2 mb-4 md:mb-2">
+                <div className="flex items-center gap-2 mb-4 md:mb-0">
                   <HiOutlinePhone className=" w-5 h-5 text-[var(--primary)]" />
                   <h3 className="text-[var(--primary)] font-bold ">
                     {t("contact.call")}
@@ -72,7 +72,7 @@ function Contact() {
                 </div>
               </div>
               <div className="contact-card ">
-                <h3 className="text-[var(--primary)] font-bold mb-4">
+                <h3 className="text-[var(--primary)] font-bold mb-4 md:mb-0">
                   {t("contact.connect")}
                 </h3>
                 <div className="flex items-center justify-end gap-x-4">
@@ -103,7 +103,7 @@ function Contact() {
                 </div>
               </div>
               <div className="contact-card ">
-                <div className="flex items-center gap-2 mb-4">
+                <div className="flex items-center gap-2 mb-4 md:mb-0">
                   <h3 className="text-[var(--primary)] font-bold ">
                     {t("contact.licenses")}
                   </h3>
@@ -118,7 +118,7 @@ function Contact() {
           </div>
           <form
             onSubmit={submitContact}
-            className="rounded-2xl border border-[var(--border-icon)] shadow-sm px-6 py-8 bg-[var(--bg)]"
+            className="rounded-2xl border border-[var(--border-icon)] shadow-sm p-6  bg-[var(--bg)]"
             data-reveal
             data-reveal-delay="120"
           >
