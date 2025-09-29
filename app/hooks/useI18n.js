@@ -188,7 +188,7 @@ const TRANSLATIONS = {
       emailSender: "Sender",
       connect: "Connect with me",
       call: "Phone Number",
-      licenses:"licenses"
+      licenses:"Licenses"
     },
     footer: {
       note: " Sahar Fallahi. All rights reserved.",
