@@ -35,7 +35,7 @@ function Contact() {
         </p>
         <div className=" grid md:grid-cols-2 gap-8 items-start">
           <div data-reveal>
-            <ul className="flex flex-col  items-center gap-4 mt-4 p-0 list-none">
+            <ul className="flex flex-col  items-center gap-4 p-0 list-none">
               <div className="contact-card ">
                 <div className="flex items-center gap-2 mb-4">
                   <HiOutlineMail className=" w-5 h-5 text-[var(--primary)]" />
@@ -99,6 +99,18 @@ function Contact() {
                     target="_blank"
                   >
                     <FaTelegramPlane className="w-4 h-4 md:w-5 md:h-5" />
+                  </a>
+                </div>
+              </div>
+              <div className="contact-card ">
+                <div className="flex items-center gap-2 mb-4">
+                  <h3 className="text-[var(--primary)] font-bold ">
+                    {t("contact.licenses")}
+                  </h3>
+                </div>
+                <div className="flex items-center justify-end gap-x-4">
+                  <a referrerPolicy='origin' target='_blank' href='https://trustseal.enamad.ir/?id=653548&Code=Bigmoqoy21SSdoVra2lLjwiHi6tyvGHn'>
+                  <img referrerPolicy='origin' src='https://trustseal.enamad.ir/logo.aspx?id=653548&Code=Bigmoqoy21SSdoVra2lLjwiHi6tyvGHn' alt='' style={{cursor:"pointer"}} code='Bigmoqoy21SSdoVra2lLjwiHi6tyvGHn'/>
                   </a>
                 </div>
               </div>

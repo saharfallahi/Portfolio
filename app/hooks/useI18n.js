@@ -96,6 +96,7 @@ const TRANSLATIONS = {
       emailSender: "ارسال کننده",
       connect: "شبکه های اجتماعی",
       call: "شماره تماس",
+      licenses:"مجوزها"
     },
     footer: {
       note: " سحر فلاحی. همه حقوق محفوظ است.",
@@ -187,6 +188,7 @@ const TRANSLATIONS = {
       emailSender: "Sender",
       connect: "Connect with me",
       call: "Phone Number",
+      licenses:"licenses"
     },
     footer: {
       note: " Sahar Fallahi. All rights reserved.",
