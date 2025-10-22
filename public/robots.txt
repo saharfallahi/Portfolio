@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://sahar-fallahi.ir
+
+# Sitemaps
+Sitemap: https://sahar-fallahi.ir/sitemap.xml
