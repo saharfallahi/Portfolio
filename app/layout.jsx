@@ -8,14 +8,14 @@ const vazirmatn = Vazirmatn({
 });
 
 export const metadata = {
-  title: "Sahar Fallahi | سحر فلاحی | طراح سایت و توسعه‌دهنده وب",
+  title: "Sahar Fallahi | سحر فلاحی ",
   description:
-    "Frontend Developer Portfolio Specializing in React, Next.js, JavaScript & Tailwind  |پورتفولیو برنامه نویس وب و طراح سایت سحر فلاحی متخصص در React، Next.js، JavaScript و Tailwind ",
+    "Frontend Web Developer Portfolio Specializing in React, Next.js, JavaScript & Tailwind  |پورتفولیو طراح سایت، برنامه نویس و توسعه دهنده وب سحر فلاحی متخصص در React، Next.js، JavaScript و Tailwind ",
 
   openGraph: {
-    title: "سحر فلاحی | طراح سایت و توسعه دهنده وب | Frontend Developer",
+    title: "سحر فلاحی | Sahar Fallahi",
     description:
-      "طراحی و توسعه رابط کاربری مدرن با React و Next.js | مشاهده نمونه‌کارها در sahar-fallahi.ir",
+      "طراح سایت، برنامه نویس و توسعه دهنده وب متخصص در طراحی و توسعه رابط کاربری مدرن با React و Next.js | Frontend Developer | مشاهده نمونه‌کارها در sahar-fallahi.ir",
     url: "https://sahar-fallahi.ir",
     siteName: "Sahar Fallahi",
     images: [
