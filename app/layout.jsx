@@ -13,7 +13,7 @@ export const metadata = {
   description: "Frontend Developer Portfolio Specializing in React, Next.js, JavaScript & Tailwind  |پورتفولیو برنامه نویس وب و طراح سایت سحر فلاحی متخصص در React، Next.js، JavaScript و Tailwind ",
   
   openGraph: {
-    title: "سحر فلاحی | طراح وب و فرانت‌اند دولوپر",
+    title: "سحر فلاحی | طراح سایت و توسعه دهنده وب | Frontend Developer",
     description:
       "طراحی و توسعه رابط کاربری مدرن با React و Next.js | مشاهده نمونه‌کارها در sahar-fallahi.ir",
     url: "https://sahar-fallahi.ir",
