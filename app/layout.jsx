@@ -7,11 +7,11 @@ const vazirmatn = Vazirmatn({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-
 export const metadata = {
   title: "Sahar Fallahi | سحر فلاحی | طراح سایت و توسعه‌دهنده وب",
-  description: "Frontend Developer Portfolio Specializing in React, Next.js, JavaScript & Tailwind  |پورتفولیو برنامه نویس وب و طراح سایت سحر فلاحی متخصص در React، Next.js، JavaScript و Tailwind ",
-  
+  description:
+    "Frontend Developer Portfolio Specializing in React, Next.js, JavaScript & Tailwind  |پورتفولیو برنامه نویس وب و طراح سایت سحر فلاحی متخصص در React، Next.js، JavaScript و Tailwind ",
+
   openGraph: {
     title: "سحر فلاحی | طراح سایت و توسعه دهنده وب | Frontend Developer",
     description:
@@ -29,7 +29,11 @@ export const metadata = {
     locale: "fa_IR",
     type: "website",
   },
-
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
+    shortcut: "/icon.png",
+  },
   twitter: {
     card: "summary_large_image",
     title: "سحر فلاحی | طراح و توسعه‌دهنده فرانت‌اند",
@@ -45,9 +49,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${vazirmatn.className} bg-[var(--bg)] text-[var(--text)]`}
       >
-        <I18nProvider>
-          {children}
-        </I18nProvider>
+        <I18nProvider>{children}</I18nProvider>
       </body>
     </html>
   );
