@@ -46,6 +46,39 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fa" dir="rtl" data-theme="dark" suppressHydrationWarning>
+       <head>
+        {/* ✅ JSON-LD برای معرفی شخص و لوگو */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "سحر فلاحی",
+              "alternateName": "Sahar Fallahi",
+              "url": "https://sahar-fallahi.ir",
+              "image": "https://sahar-fallahi.ir/icon.png",
+              "jobTitle": "Frontend Developer",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Freelance Web Developer"
+              },
+              "sameAs": [
+                "https://www.linkedin.com/in/sahar-fallahi/", 
+                "https://github.com/saharfallahi",
+                "https://www.instagram.com/saharfallahi.ir"
+              ],
+              "description": "طراح و توسعه‌دهنده وب با تخصص در React، Next.js و Tailwind CSS. ساخت رابط‌های کاربری حرفه‌ای و مدرن برای کسب‌وکارهای کوچک و بزرگ.",
+              "knowsAbout": ["Frontend Development","Web Development", "React", "Next.js", "Tailwind CSS", "UI/UX Design"],
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "IR",
+                "addressLocality": "Iran"
+              }
+            })
+          }}
+        />
+      </head>
       <body
         className={`${vazirmatn.className} bg-[var(--bg)] text-[var(--text)]`}
       >
