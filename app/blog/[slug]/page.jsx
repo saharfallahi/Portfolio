@@ -15,11 +15,22 @@ function renderSection(section, index) {
           {section.text}
         </h2>
       );
+    case "code":
+      return (
+        <pre
+          key={`code-${index}`}
+          dir="ltr"
+          className="rounded-2xl border border-[color-mix(in_oklab,var(--primary),transparent_70%)] bg-[color-mix(in_oklab,var(--primary),transparent_92%)] px-6 py-5 text-[var(--text)] font-mono text-sm whitespace-pre-wrap overflow-x-auto"
+        >
+          <code>{section.text}</code>
+        </pre>
+      );
     case "quote":
       return (
         <blockquote
           key={`quote-${index}`}
-          className="rounded-2xl border border-[color-mix(in_oklab,var(--primary),transparent_70%)] bg-[color-mix(in_oklab,var(--primary),transparent_92%)] px-6 py-5 text-[var(--text)]"
+          dir="rtl"
+          className="rounded-2xl border border-[color-mix(in_oklab,var(--primary),transparent_70%)] bg-[color-mix(in_oklab,var(--primary),transparent_92%)] px-6 py-5 text-[var(--text)] text-base leading-7 italic"
         >
           {section.text}
         </blockquote>
@@ -181,9 +192,11 @@ export default async function BlogPostPage({ params }) {
           </div>
 
           <div className="lg:flex lg:flex-row-reverse lg:gap-8">
-            <BlogSidebar posts={getPosts()} currentSlug={post.slug} />
+            <div className="lg:w-80 lg:flex-shrink-0">
+              <BlogSidebar posts={getPosts()} currentSlug={post.slug} />
+            </div>
 
-            <div className="mt-8 flex-1 lg:mt-0">
+            <div className="mt-8 flex-1 lg:mt-0 lg:min-w-0">
               <div className="rounded-3xl border border-[color-mix(in_oklab,var(--text),transparent_88%)] bg-[color-mix(in_oklab,var(--surface),transparent_6%)] p-6 shadow-[0_24px_60px_-48px_color-mix(in_oklab,var(--text),transparent_80%)] space-y-6 lg:space-y-8 lg:p-10">
                 {post.content.map((section, index) =>
                   renderSection(section, index)
