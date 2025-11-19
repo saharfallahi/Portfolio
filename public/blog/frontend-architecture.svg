@@ -1,0 +1,37 @@
+<svg width="1200" height="780" viewBox="0 0 1200 780" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="50%" stop-color="#312e81"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="780" fill="url(#bgGradient)"/>
+  <g opacity="0.3">
+    <circle cx="180" cy="160" r="120" fill="#22d3ee"/>
+    <circle cx="1020" cy="620" r="140" fill="#a855f7"/>
+    <circle cx="600" cy="380" r="260" fill="#4f46e5"/>
+  </g>
+  <g transform="translate(160 220)">
+    <rect x="0" y="0" width="360" height="360" rx="32" fill="rgba(15,18,33,0.55)" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
+    <rect x="32" y="48" width="296" height="60" rx="16" fill="rgba(34,211,238,0.2)" stroke="rgba(34,211,238,0.4)"/>
+    <rect x="32" y="128" width="296" height="60" rx="16" fill="rgba(99,102,241,0.25)" stroke="rgba(99,102,241,0.45)"/>
+    <rect x="32" y="208" width="296" height="60" rx="16" fill="rgba(168,85,247,0.25)" stroke="rgba(168,85,247,0.45)"/>
+  </g>
+  <g transform="translate(640 220)">
+    <rect x="0" y="0" width="360" height="360" rx="32" fill="rgba(15,18,33,0.35)" stroke="rgba(255,255,255,0.12)" stroke-width="2"/>
+    <rect x="48" y="72" width="120" height="120" rx="24" fill="rgba(34,211,238,0.2)" stroke="rgba(34,211,238,0.4)"/>
+    <rect x="192" y="72" width="120" height="120" rx="24" fill="rgba(168,85,247,0.2)" stroke="rgba(168,85,247,0.4)"/>
+    <rect x="120" y="216" width="120" height="120" rx="24" fill="rgba(99,102,241,0.25)" stroke="rgba(99,102,241,0.45)"/>
+  </g>
+  <text x="160" y="560" fill="#f8fafc" font-size="64" font-family="Vazirmatn, sans-serif" font-weight="700">الگوهای معماری فرانت‌اند</text>
+  <text x="160" y="620" fill="#cbd5f5" font-size="28" font-family="Vazirmatn, sans-serif" opacity="0.85">
+    کد تمیز، ساختار ماژولار و تیم‌پذیری بالا برای توسعه مقیاس‌پذیر
+  </text>
+  <rect x="160" y="660" width="320" height="6" rx="3" fill="url(#accentGradient)"/>
+</svg>
+

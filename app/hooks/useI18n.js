@@ -17,6 +17,7 @@ const TRANSLATIONS = {
       about: "درباره‌من",
       skills: "مهارت‌ها",
       projects: "نمونه‌کارها",
+      blog: "مقالات",
       contact: "تماس",
     },
     hero: {
@@ -96,7 +97,7 @@ const TRANSLATIONS = {
       emailSender: "ارسال کننده",
       connect: "شبکه های اجتماعی",
       call: "شماره تماس",
-      licenses:"مجوزها"
+      licenses: "مجوزها",
     },
     footer: {
       note: " سحر فلاحی. همه حقوق محفوظ است.",
@@ -109,6 +110,7 @@ const TRANSLATIONS = {
       about: "About",
       skills: "Skills",
       projects: "Projects",
+      blog: "Blog",
       contact: "Contact",
     },
     hero: {
@@ -188,7 +190,7 @@ const TRANSLATIONS = {
       emailSender: "Sender",
       connect: "Connect with me",
       call: "Phone Number",
-      licenses:"Licenses"
+      licenses: "Licenses",
     },
     footer: {
       note: " Sahar Fallahi. All rights reserved.",

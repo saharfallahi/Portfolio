@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import useI18n from "../hooks/useI18n";
 import useTheme from "../hooks/useTheme";
@@ -15,33 +17,39 @@ function Header() {
   const { isLightTheme, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const ref = useOutsideClick(() => setIsOpen(false));
+  const pathname = usePathname();
+
+  const isHomePage = pathname === "/";
+  const isBlogPage = pathname?.startsWith("/blog");
+  const sectionHref = (hash) => (isHomePage ? hash : `/${hash}`);
 
   const links = [
-    [t("nav.home"), "#home"],
-    [t("nav.about"), "#about"],
-    [t("nav.skills"), "#skills"],
-    [t("nav.projects"), "#projects"],
-    [t("nav.contact"), "#contact"],
+    [t("nav.home"), isHomePage ? "#home" : "/#home"],
+    [t("nav.about"), sectionHref("#about")],
+    [t("nav.skills"), sectionHref("#skills")],
+    [t("nav.projects"), sectionHref("#projects")],
+    [t("nav.blog"), "/blog"],
+    [t("nav.contact"), sectionHref("#contact")],
   ];
   return (
     <header className="fixed w-full top-0 z-50 backdrop-saturate-150 backdrop-blur bg-gradient-to-b from-[color-mix(in_oklab,var(--bg),transparent_40%)] to-transparent border-b border-[color-mix(in_oklab,var(--text),transparent_90%)]">
       <div className="container-std min-h-16 flex items-center justify-between gap-4">
-        <a
-          href="#home"
+        <Link
+          href={sectionHref("#home")}
           className="hidden md:block font-bold text-xl text-[var(--text)] no-underline"
         >
           <span className="text-[var(--primary)] ">{t("nav.logo")}</span>
-        </a>
+        </Link>
         <nav className="hidden md:flex">
           <ul className="flex gap-4 m-0 p-0 list-none">
             {links.map(([label, href]) => (
               <li key={href}>
-                <a
+                <Link
                   href={href}
-                  className="py-3 px-2 rounded-lg text-[--text] hover:text-[var(--primary-2)] transition-all duration-300"
+                  className="py-3 px-2 outline-none text-[--text] hover:text-[var(--primary-2)] transition-all duration-300"
                 >
                   {label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -83,7 +91,7 @@ function Header() {
         <div className="flex items-center gap-2">
           <button
             id="themeToggle"
-            className=" rounded-lg px-2.5 py-1 text-[var(--text)] border-[color-mix(in_oklab,var(--text),transparent_85%)]"
+            className=" rounded-lg px-2.5 py-2 text-[var(--text)] hover:text-[var(--primary-2)] transition-all duration-300"
             onClick={() => {
               const next = isLightTheme ? "dark" : "light";
               document.documentElement.setAttribute("data-theme", next);
@@ -99,30 +107,34 @@ function Header() {
               <IoSunnyOutline className="w-4 h-4 md:w-5 md:h-5" />
             )}
           </button>
-          <button
-            id="langToggle"
-            className=" rounded-lg px-2.5 py-1 text-[var(--text)] border-[color-mix(in_oklab,var(--text),transparent_85%)]"
-            onClick={toggleLanguage}
-            aria-label="toggle language"
-          >
-            {lang === "fa" ? "EN" : "فارسی"}
-          </button>
-          <button>
-            <a
-              href={
-                lang === "fa"
-                  ? "saharfallahi-cv-fa.pdf"
-                  : "saharfallahi-cv-fa.pdf"
-              }
-              download
-              className="hidden md:block btn btn-primary py-2 "
+          {!isBlogPage && (
+            <button
+              id="langToggle"
+              className=" rounded-lg px-2.5 py-2 text-[var(--text)] hover:text-[var(--primary-2)] transition-all duration-300"
+              onClick={toggleLanguage}
+              aria-label="toggle language"
             >
-              <span className="flex flex-row gap-2 items-center ">
-                <IoDocumentTextOutline />
-                {lang === "fa" ? "رزومه" : "Resume"}
-              </span>
-            </a>
-          </button>
+              {lang === "fa" ? "EN" : "فارسی"}
+            </button>
+          )}
+          {!isBlogPage && (
+            <button>
+              <a
+                href={
+                  lang === "fa"
+                    ? "saharfallahi-cv-fa.pdf"
+                    : "saharfallahi-cv-fa.pdf"
+                }
+                download
+                className="hidden md:block btn btn-primary py-2 "
+              >
+                <span className="flex flex-row gap-2 items-center ">
+                  <IoDocumentTextOutline />
+                  {lang === "fa" ? "رزومه" : "Resume"}
+                </span>
+              </a>
+            </button>
+          )}
         </div>
       </div>
       <div
@@ -139,30 +151,32 @@ function Header() {
             <li
               key={href}
               onClick={() => setIsOpen(false)}
-              className="py-3 px-2 rounded-lg text-[--text] hover:text-[var(--primary-2)] hover:bg-[var(--surface)]"
+              className=" rounded-lg text-[--text] hover:text-[var(--primary-2)] hover:bg-[var(--surface)]"
             >
-              <a href={href} className="block">
+              <Link href={href} className="py-3 px-2 block">
                 {label}
-              </a>
+              </Link>
             </li>
           ))}
-          <li>
-            <a
-              href={
-                lang === "fa"
-                  ? "saharfallahi-cv-fa.pdf"
-                  : "saharfallahi-cv-fa.pdf"
-              }
-              download
-              className="block  btn btn-primary "
-              onClick={() => setIsOpen(false)}
-            >
-              <button className="w-full flex flex-row gap-1 items-center justify-center">
-                <IoDocumentTextOutline />
-                {lang === "fa" ? "رزومه" : "Resume"}
-              </button>
-            </a>
-          </li>
+          {!isBlogPage && (
+            <li>
+              <a
+                href={
+                  lang === "fa"
+                    ? "saharfallahi-cv-fa.pdf"
+                    : "saharfallahi-cv-fa.pdf"
+                }
+                download
+                className="block  btn btn-primary "
+                onClick={() => setIsOpen(false)}
+              >
+                <button className="w-full flex flex-row gap-1 items-center justify-center">
+                  <IoDocumentTextOutline />
+                  {lang === "fa" ? "رزومه" : "Resume"}
+                </button>
+              </a>
+            </li>
+          )}
         </div>
       </div>
     </header>

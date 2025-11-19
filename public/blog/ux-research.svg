@@ -1,0 +1,45 @@
+<svg width="1200" height="780" viewBox="0 0 1200 780" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgUx" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="50%" stop-color="#1f2937"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="accentUx" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6ee7b7"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="780" fill="url(#bgUx)"/>
+  <g opacity="0.35">
+    <circle cx="220" cy="220" r="170" fill="#22d3ee"/>
+    <circle cx="980" cy="540" r="190" fill="#7c3aed"/>
+    <circle cx="620" cy="360" r="260" fill="#34d399"/>
+  </g>
+  <g transform="translate(220 220)">
+    <rect x="0" y="0" width="320" height="340" rx="28" fill="rgba(17,24,39,0.5)" stroke="rgba(226,232,240,0.25)" stroke-width="1.5"/>
+    <g transform="translate(40 56)">
+      <rect x="0" y="0" width="240" height="16" rx="8" fill="rgba(110,231,183,0.55)"/>
+      <rect x="0" y="48" width="200" height="16" rx="8" fill="rgba(125,211,252,0.5)"/>
+      <rect x="0" y="96" width="240" height="120" rx="20" fill="rgba(124,58,237,0.25)" stroke="rgba(124,58,237,0.4)" stroke-width="1.5"/>
+      <line x1="12" y1="120" x2="228" y2="120" stroke="rgba(255,255,255,0.15)" stroke-width="2" stroke-dasharray="6 10"/>
+    </g>
+  </g>
+  <g transform="translate(600 220)">
+    <rect x="0" y="0" width="360" height="340" rx="32" fill="rgba(17,24,39,0.45)" stroke="rgba(226,232,240,0.3)" stroke-width="1.5"/>
+    <circle cx="100" cy="120" r="64" fill="rgba(124,58,237,0.35)"/>
+    <rect x="180" y="72" width="140" height="28" rx="14" fill="rgba(34,211,238,0.55)"/>
+    <rect x="180" y="120" width="160" height="20" rx="10" fill="rgba(110,231,183,0.55)"/>
+    <rect x="72" y="200" width="216" height="12" rx="6" fill="rgba(148,163,184,0.4)"/>
+    <rect x="72" y="232" width="184" height="12" rx="6" fill="rgba(148,163,184,0.4)"/>
+    <rect x="72" y="264" width="144" height="12" rx="6" fill="rgba(148,163,184,0.4)"/>
+  </g>
+  <text x="220" y="580" fill="#f0fdf4" font-size="60" font-family="Vazirmatn, sans-serif" font-weight="700">
+    تحقیقات UX برای توسعه‌دهندگان
+  </text>
+  <text x="220" y="636" fill="#d1fae5" font-size="28" font-family="Vazirmatn, sans-serif" opacity="0.9">
+    بازخورد واقعی، تصمیم فنی دقیق‌تر و محصول کاربرمحور
+  </text>
+  <rect x="220" y="672" width="340" height="6" rx="3" fill="url(#accentUx)"/>
+</svg>
+

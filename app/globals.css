@@ -45,14 +45,21 @@ html {
   li {
     list-style: none;
   }
+  input {
+    @apply focus:outline-none ;
+    
+  }
 }
 
 @layer components {
   .container-std {
     @apply w-full max-w-[1100px] mx-auto px-4;
   }
+  .container-blog {
+    @apply w-full max-w-[1180px] xl:max-w-[1260px] mx-auto px-4 md:px-6;
+  }
   .btn {
-    @apply inline-flex items-center gap-2 border border-transparent rounded-xl shadow-sm text-[var(--text)] no-underline  px-4 py-3  transition-all duration-300;
+    @apply inline-flex items-center gap-2 border border-transparent rounded-xl shadow-sm text-[var(--text)] no-underline  px-4 py-3  transition-all duration-300 outline-none;
   }
   .btn-primary {
     background: var(--primary);
