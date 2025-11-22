@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import BlogSidebar from "../components/BlogSidebar";
-import { SITE_URL, getPostBySlug, getPosts } from "../../../lib/posts";
+import { SITE_URL, getPostBySlug, getPosts } from "../../../lib/posts/service";
 
 function renderSection(section, index) {
   switch (section.type) {
@@ -78,7 +78,18 @@ export async function generateMetadata({ params }) {
   return {
     title: `${post.title} | وبلاگ سحر فلاحی`,
     description: post.description ?? post.summary,
-    keywords: post.keywords,
+    keywords: post.keywords || post.tags || [],
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
     alternates: {
       canonical,
     },
