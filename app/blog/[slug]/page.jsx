@@ -10,7 +10,7 @@ function renderSection(section, index) {
       return (
         <h2
           key={`heading-${index}`}
-          className="text-2xl font-semibold text-[var(--text)]"
+          className="text-xl md:text-2xl font-semibold text-[var(--text)]"
         >
           {section.text}
         </h2>
@@ -30,7 +30,7 @@ function renderSection(section, index) {
         <blockquote
           key={`quote-${index}`}
           dir="rtl"
-          className="rounded-2xl border border-[color-mix(in_oklab,var(--primary),transparent_70%)] bg-[color-mix(in_oklab,var(--primary),transparent_92%)] px-6 py-5 text-[var(--text)] text-base leading-7 italic"
+          className="rounded-2xl border border-[color-mix(in_oklab,var(--primary),transparent_70%)] bg-[color-mix(in_oklab,var(--primary),transparent_92%)] px-6 py-5 text-[var(--text)] text-sm md:text-base leading-6 md:leading-7 italic"
         >
           {section.text}
         </blockquote>
@@ -42,7 +42,10 @@ function renderSection(section, index) {
           className="list-disc space-y-2 pr-6 text-[var(--text)] marker:text-[var(--primary)]"
         >
           {section.items.map((item, idx) => (
-            <li key={idx} className="text-base leading-8 text-[var(--muted)]">
+            <li
+              key={idx}
+              className="text-sm md:text-base leading-7 md:leading-8 text-[var(--muted)]"
+            >
               {item}
             </li>
           ))}
@@ -53,7 +56,7 @@ function renderSection(section, index) {
       return (
         <p
           key={`paragraph-${index}`}
-          className="text-lg leading-9 text-[var(--muted)]"
+          className="text-base md:text-lg leading-7 md:leading-9 text-[var(--muted)]"
         >
           {section.text}
         </p>
@@ -181,7 +184,7 @@ export default async function BlogPostPage({ params }) {
                 {post.readTime}
               </span>
             </div>
-            <h1 className="text-4xl font-bold text-[var(--text)]">
+            <h1 className="text-2xl md:text-4xl font-bold text-[var(--text)]">
               {post.title}
             </h1>
           </header>
@@ -203,7 +206,8 @@ export default async function BlogPostPage({ params }) {
           </div>
 
           <div className="lg:flex lg:flex-row-reverse lg:gap-8">
-            <div className="lg:w-80 lg:flex-shrink-0">
+            {/* Sidebar - فقط در desktop نمایش داده می‌شود */}
+            <div className="hidden lg:block lg:w-80 lg:flex-shrink-0">
               <BlogSidebar posts={getPosts()} currentSlug={post.slug} />
             </div>
 
@@ -223,6 +227,11 @@ export default async function BlogPostPage({ params }) {
                     </span>
                   ))}
                 </div>
+              </div>
+
+              {/* Sidebar - فقط در mobile نمایش داده می‌شود (بعد از محتوا) */}
+              <div className="mt-8 lg:hidden">
+                <BlogSidebar posts={getPosts()} currentSlug={post.slug} />
               </div>
             </div>
           </div>

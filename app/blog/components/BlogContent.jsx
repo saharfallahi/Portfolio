@@ -51,7 +51,7 @@ export default function BlogContent({ posts }) {
                   </time>
                   <span>{post.readTime}</span>
                 </div>
-                <h2 className="text-2xl font-bold leading-snug text-[var(--text)]">
+                <h2 className="text-xl md:text-2xl font-bold leading-snug text-[var(--text)]">
                   <Link href={`/blog/${post.slug}`} className="no-underline">
                     {post.title}
                   </Link>
