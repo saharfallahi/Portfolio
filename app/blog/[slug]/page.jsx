@@ -20,9 +20,9 @@ function renderSection(section, index) {
         <pre
           key={`code-${index}`}
           dir="ltr"
-          className="rounded-2xl border border-[color-mix(in_oklab,var(--primary),transparent_70%)] bg-[color-mix(in_oklab,var(--primary),transparent_92%)] px-6 py-5 text-[var(--text)] font-mono text-sm whitespace-pre-wrap overflow-x-auto"
+          className="rounded-2xl border border-[color-mix(in_oklab,var(--primary),transparent_70%)] bg-[color-mix(in_oklab,var(--primary),transparent_92%)] px-6 py-5 text-[var(--text)] font-mono text-sm whitespace-pre overflow-x-auto max-w-full w-full"
         >
-          <code>{section.text}</code>
+          <code className="block min-w-0">{section.text}</code>
         </pre>
       );
     case "quote":
@@ -207,7 +207,7 @@ export default async function BlogPostPage({ params }) {
               <BlogSidebar posts={getPosts()} currentSlug={post.slug} />
             </div>
 
-            <div className="mt-8 flex-1 lg:mt-0 lg:min-w-0">
+            <div className="mt-8 flex-1 lg:mt-0 lg:min-w-0 overflow-x-hidden">
               <div className="rounded-3xl border border-[color-mix(in_oklab,var(--text),transparent_88%)] bg-[color-mix(in_oklab,var(--surface),transparent_6%)] p-6 shadow-[0_24px_60px_-48px_color-mix(in_oklab,var(--text),transparent_80%)] space-y-6 lg:space-y-8 lg:p-10">
                 {post.content.map((section, index) =>
                   renderSection(section, index)
