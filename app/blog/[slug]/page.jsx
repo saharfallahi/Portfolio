@@ -205,13 +205,9 @@ export default async function BlogPostPage({ params }) {
             />
           </div>
 
-          <div className="lg:flex lg:flex-row-reverse lg:gap-8">
-            {/* Sidebar - فقط در desktop نمایش داده می‌شود */}
-            <div className="hidden lg:block lg:w-80 lg:flex-shrink-0">
-              <BlogSidebar posts={getPosts()} currentSlug={post.slug} />
-            </div>
-
-            <div className="mt-8 flex-1 lg:mt-0 lg:min-w-0 overflow-x-hidden">
+          <div className="flex flex-col lg:flex-row lg:gap-8">
+            {/* محتوای پست */}
+            <div className="flex-1 lg:mt-0 lg:min-w-0 overflow-x-hidden">
               <div className="rounded-3xl border border-[color-mix(in_oklab,var(--text),transparent_88%)] bg-[color-mix(in_oklab,var(--surface),transparent_6%)] p-6 shadow-[0_24px_60px_-48px_color-mix(in_oklab,var(--text),transparent_80%)] space-y-6 lg:space-y-8 lg:p-10">
                 {post.content.map((section, index) =>
                   renderSection(section, index)
@@ -228,11 +224,11 @@ export default async function BlogPostPage({ params }) {
                   ))}
                 </div>
               </div>
+            </div>
 
-              {/* Sidebar - فقط در mobile نمایش داده می‌شود (بعد از محتوا) */}
-              <div className="mt-8 lg:hidden">
-                <BlogSidebar posts={getPosts()} currentSlug={post.slug} />
-              </div>
+            {/* Sidebar - در mobile زیر محتوا، در desktop سمت چپ با sticky */}
+            <div className="mt-8 lg:mt-0 lg:w-80 lg:flex-shrink-0">
+              <BlogSidebar posts={getPosts()} currentSlug={post.slug} />
             </div>
           </div>
         </div>
