@@ -215,12 +215,13 @@ export default async function BlogPostPage({ params }) {
 
                 <div className="flex flex-wrap gap-2 border-t border-[color-mix(in_oklab,var(--text),transparent_90%)] pt-6">
                   {post.tags.map((tag) => (
-                    <span
+                    <Link
                       key={tag}
-                      className="rounded-full bg-[var(--bg-icon)] px-3 py-1 text-xs font-medium text-[var(--primary)] shadow-sm"
+                      href={`/blog?tag=${encodeURIComponent(tag)}`}
+                      className="rounded-full bg-[var(--bg-icon)] px-3 py-1 text-xs font-medium text-[var(--primary)] shadow-sm hover:bg-[color-mix(in_oklab,var(--primary),transparent_10%)] hover:text-white transition-colors duration-200"
                     >
                       #{tag}
-                    </span>
+                    </Link>
                   ))}
                 </div>
               </div>

@@ -1,12 +1,21 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import BlogFilters from "./BlogFilters";
 
 export default function BlogContent({ posts }) {
+  const searchParams = useSearchParams();
+  const tagFromUrl = searchParams.get("tag");
   const [filteredPosts, setFilteredPosts] = useState(posts);
+  const [selectedTag, setSelectedTag] = useState(tagFromUrl || "");
+
+  useEffect(() => {
+    const tag = searchParams.get("tag");
+    setSelectedTag(tag || "");
+  }, [searchParams]);
 
   const handleFilteredPostsChange = useCallback((filtered) => {
     setFilteredPosts(filtered);
@@ -17,6 +26,8 @@ export default function BlogContent({ posts }) {
       <BlogFilters
         posts={posts}
         onFilteredPostsChange={handleFilteredPostsChange}
+        selectedTag={selectedTag}
+        onTagChange={setSelectedTag}
       />
 
       {filteredPosts.length === 0 ? (

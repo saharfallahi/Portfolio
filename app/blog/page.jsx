@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { SITE_URL, getPosts } from "../../lib/posts/service";
 import BlogContent from "./components/BlogContent";
 
@@ -116,7 +117,9 @@ export default function BlogPage() {
             </p>
           </header> */}
 
-          <BlogContent posts={posts} />
+          <Suspense fallback={<div className="text-center py-12 text-[var(--muted)]">در حال بارگذاری...</div>}>
+            <BlogContent posts={posts} />
+          </Suspense>
         </div>
       </section>
     </main>
