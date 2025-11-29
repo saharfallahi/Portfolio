@@ -6,6 +6,14 @@ import { SITE_URL, getPostBySlug, getPosts } from "../../../lib/posts/service";
 
 function renderSection(section, index) {
   switch (section.type) {
+    case "html":
+      return (
+        <p
+          key={`html-${index}`}
+          className="text-base md:text-lg leading-7 md:leading-9 text-[var(--muted)]"
+          dangerouslySetInnerHTML={{ __html: section.html }}
+        />
+      );
     case "heading":
       return (
         <h2
