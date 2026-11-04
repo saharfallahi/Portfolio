@@ -53,7 +53,7 @@ function Contact() {
                   </a>
                 </div>
               </div>
-              <div className="contact-card ">
+              {/* <div className="contact-card ">
                 <div className="flex items-center gap-2 mb-4 md:mb-0">
                   <HiOutlinePhone className=" w-5 h-5 text-[var(--primary)]" />
                   <h3 className="text-[var(--primary)] font-bold ">
@@ -70,7 +70,7 @@ function Contact() {
                     09169629957
                   </a>
                 </div>
-              </div>
+              </div> */}
               <div className="contact-card ">
                 <h3 className="text-[var(--primary)] font-bold mb-4 md:mb-0">
                   {t("contact.connect")}
